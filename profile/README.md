@@ -2,6 +2,8 @@
 
 **Browser and Office Infrastructure in Intermediate Language with Enhanced Reliability**
 
+**First Preview Release:** [Broiler releases](https://github.com/Broiler-Platform/Broiler/releases)
+
 Broiler is an open-source platform project exploring a deliberately hard question:
 
 > Can a modern browser and office platform be built entirely in managed .NET?
