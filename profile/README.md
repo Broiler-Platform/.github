@@ -1,313 +1,191 @@
 # Broiler Platform
 
-> **Browser and Office Infrastructure in Intermediate Language with Enhanced Reliability**
+**Browser and Office Infrastructure in Intermediate Language with Enhanced Reliability**
 
-## Hi there 👋
+Broiler is an open-source platform project exploring a deliberately hard question:
 
-Welcome to the **Broiler Platform**!
+> Can a modern browser and office platform be built entirely in managed .NET?
 
-Broiler is an open-source platform project with an ambitious long-term goal:
+No Chromium. No native browser engine. No embedded WebView. Just managed .NET, modular architecture, automated standards testing, AI-assisted engineering, and human review.
 
-> **Build a production-ready browser and office platform entirely in managed .NET.**
+Broiler is not trying to wrap an existing browser. It is building the shared infrastructure underneath browsers and office applications: scripting, document models, styling, layout, graphics, text, input, and runtime services.
 
-The project combines practical software engineering with ongoing research into browser engines, document rendering, AI-assisted engineering, and modular platform design.
+## Preview
 
-No native browser engine.
+These screenshots show the current Windows Direct2D frontend rendering real pages during development.
 
-No Chromium.
+<table>
+  <tr>
+    <td width="50%">
+      <img src="./google.png" alt="Broiler rendering google.de" />
+    </td>
+    <td width="50%">
+      <img src="./7zorg.png" alt="Broiler rendering 7-zip.org" />
+    </td>
+  </tr>
+  <tr>
+    <td align="center"><sub>google.de</sub></td>
+    <td align="center"><sub>7-zip.org</sub></td>
+  </tr>
+  <tr>
+    <td width="50%">
+      <img src="./wpt.png" alt="Broiler rendering wpt.live" />
+    </td>
+    <td width="50%">
+      <img src="./mozilla.png" alt="Broiler rendering ftp.mozilla.org" />
+    </td>
+  </tr>
+  <tr>
+    <td align="center"><sub>wpt.live</sub></td>
+    <td align="center"><sub>ftp.mozilla.org</sub></td>
+  </tr>
+</table>
 
-No embedded WebView.
+## Current Status
 
-Just .NET.
-
-> **Broiler combines AI-assisted engineering with rigorous human review and automated testing.**
-
----
-
-# Vision
-
-Modern browsers and office suites are among the largest and most complex software systems ever built.
-
-Broiler explores whether a different engineering approach is possible:
-
-* 100% managed .NET
-* Modular architecture
-* AI-assisted engineering
-* Human-reviewed changes
-* Extensive automated testing
-* Shared infrastructure for browser and office applications
-
-The goal is not simply to build *another browser*.
-
-The goal is to build a reusable platform for document rendering, scripting, layout, graphics, and user interaction that can power both browsers and office applications.
-
----
-
-# Why "Enhanced Reliability"?
-
-The **"Enhanced Reliability"** part of the name describes the engineering philosophy behind Broiler.
-
-The project is developed with extensive AI assistance. AI accelerates implementation, while human review, automated testing, and a modular architecture help improve correctness, maintainability, and long-term reliability.
-
-Keeping the codebase clean, modular, and well-structured also makes it easier for AI to understand and contribute effectively despite today's limited context windows.
-
-AI is rapidly becoming an important tool in cybersecurity—for both attackers and defenders. For software such as browsers and office applications, careful AI-assisted development combined with rigorous human review is therefore an important part of the engineering process.
-
-In short:
-
-> **Managed .NET + AI-assisted engineering + Human review + Automated verification = Enhanced Reliability**
-
----
-
-# The Story Behind Broiler
-
-I'm an enthusiastic .NET developer (before that C++, C, Pascal, Windows Batch, C64 BASIC... and, before all of that, learning to read and write my native language 😄).
-
-For many years I kept asking myself a simple question:
-
-> *Is it possible to build a modern browser entirely in .NET?*
-
-When AI became capable enough to assist with software development, I naturally asked:
-
-> "Build me a browser in .NET."
-
-The answer was always the same:
-
-> "Use Chromium."
-
-My answer never changed:
-
-> "No. Entirely in .NET."
-
-Without an existing code base, the conversation usually ended there.
-
-Eventually I discovered two impressive open-source projects: **HTML Renderer** and **YantraJS**.
-
-At first the idea looked deceptively simple:
-
-> Combine both projects, add a little WPF... browser finished!
-
-As you might expect, it wasn't.
-
-The browser couldn't pass the ACID tests.
-
-Google didn't work.
-
-Gmail didn't work.
-
-And asking AI to *"make Google work"* didn't magically solve the problem either.
-
-Instead of patching the existing code, I started rebuilding the architecture piece by piece.
-
-Both projects were gradually refactored into much smaller and more focused components. AI became an accelerator rather than the architect.
-
-Automated **Test262** and **Web Platform Tests (WPT)** runners were integrated into GitHub, allowing AI to continuously work on isolated issues while every accepted change remained under human control.
-
-Four months later, the JavaScript engine successfully passed the complete Test262 suite.
-
-While one AI focused on ECMAScript, another helped modernize the HTML runtime. It only took a few minutes of discussion to organize an architecture that I already had roughly in mind.
-
-A browser naturally consists of only a handful of major building blocks:
-
-* DOM
-* CSS
-* Layout
-* Graphics
-* Runtime
-
-The interesting realization came afterwards.
-
-An office suite requires almost exactly the same infrastructure.
-
-At that point the project's vision expanded from **Browser Infrastructure** to **Browser and Office Infrastructure**—which is what **Broiler** stands for today.
-
----
-
-# Current Status
-
-The project is under active development and is **not yet intended for production use**.
+Broiler is under active development and is **not yet intended for production use**.
 
 Already implemented:
 
-* ✅ ECMAScript / JavaScript engine
-* ✅ Large parts of the HTML runtime
-* ✅ Automated Test262 integration
-* ✅ Automated Web Platform Tests (WPT) infrastructure
+- ECMAScript / JavaScript engine
+- Large parts of the HTML runtime
+- Automated Test262 integration
+- Automated Web Platform Tests (WPT) infrastructure
+- Early Windows browser frontend based on Direct2D
 
 Currently in progress:
 
-* 🚧 CSS engine improvements
-* 🚧 Layout engine
-* 🚧 Cross-platform graphics backends
-* 🚧 Browser shell
-* 🚧 Office document infrastructure
+- CSS engine improvements
+- Layout engine
+- Cross-platform graphics backends
+- Browser shell
+- Office document infrastructure
 
-For WebAssembly there is already an excellent third-party engine written entirely in .NET (**WACS**), which is planned for integration instead of reinventing the wheel.
+For WebAssembly, Broiler plans to integrate an existing third-party .NET engine such as **WACS** instead of reinventing that layer from scratch.
 
----
+## Why Broiler Exists
 
-# Design Principles
+Modern browsers and office suites are among the largest software systems in everyday use. They also share more infrastructure than they appear to:
 
-Broiler follows a small set of engineering principles.
+- Document models
+- Styling
+- Layout
+- Graphics
+- Fonts and text shaping
+- Scripting
+- Runtime services
+- Input, selection, editing, and accessibility
+
+Broiler explores whether these foundations can be built once, in a modular managed runtime, and then reused across browser and office applications.
+
+## Engineering Principles
 
 ### 100% Managed .NET
 
-Every major subsystem is written entirely in managed .NET.
-
-### AI-Assisted Engineering
-
-AI is a development tool—not the maintainer.
-
-### Human Review
-
-Every accepted change is reviewed and approved by a human.
-
-### Modular Architecture
-
-Large systems become understandable by breaking them into small, independent components.
+Every major subsystem is intended to be written in managed .NET. The goal is to improve maintainability, auditability, portability, and large-scale refactoring.
 
 ### Standards First
 
-Whenever practical, Broiler follows existing web standards instead of inventing new ones.
+Compatibility is measured against real standards suites such as Test262 and Web Platform Tests. Interoperability should be tested, not guessed.
 
-### Test-Driven Compatibility
+### Modular Architecture
 
-Interoperability is measured—not guessed.
+Large systems become tractable when they are split into focused components with clear boundaries. That also makes the codebase easier for both humans and AI tools to understand.
 
-Test262 and Web Platform Tests are first-class citizens throughout the project.
+### AI-Assisted, Human-Reviewed
+
+Broiler uses AI as an implementation accelerator, not as the maintainer. Accepted changes still require human review, automated verification, and architectural discipline.
 
 ### Browser and Office Together
 
-Browsers and office suites share much more infrastructure than they appear to.
+The same platform pieces that render web content can also support office documents, rich text editing, scripting, layout, graphics, and interaction.
 
-Broiler aims to build these foundations once and reuse them everywhere.
+## Enhanced Reliability
 
----
+The "Enhanced Reliability" part of the name describes the engineering philosophy behind the project:
 
-# Supported Platforms
+> Managed .NET + AI-assisted engineering + human review + automated verification = enhanced reliability.
 
-In principle, every platform supported by **.NET 10** should also be supported by Broiler.
+AI can move quickly, but browser and office infrastructure must be careful software. Broiler treats automated tests, standards suites, small components, and human review as first-class parts of the development process.
 
-The current graphics backend and input system are implemented using **Direct2D on Windows**, but the architecture is intentionally platform-independent.
+## First Preview - July 1, 2026
 
-Additional backends for Linux, macOS, Android and other platforms are planned.
+Highlights:
 
----
+- More than **99.99%** of the Test262 suite passes successfully, approximately **53,194** tests.
+- More than **50%** of the CSS Web Platform Tests currently render correctly.
+- Automated Test262 and WPT integration is active.
+- The first Windows frontend is based on Direct2D.
 
-# Changelog
+ACID tests are no longer a primary compatibility target. Web Platform Tests provide much broader and more current coverage of web platform behavior.
 
-## 2026-07-01 — First Preview
+## Roadmap
 
-### Highlights
+Next preview:
 
-* More than **99.99%** of the Test262 suite passes successfully (approximately **53,194** tests).
-* More than **50%** of the CSS Web Platform Tests currently render correctly.
-* Automated Test262 and WPT integration.
-* Windows frontend based on Direct2D.
+- Improved Web Platform Test compatibility
+- UI and browser-shell improvements
+- Expanded human review coverage
+- First preview of **Broiler Writer**
 
-### Notes
+Future milestones:
 
-ACID tests are no longer a primary compatibility target, as the Web Platform Tests provide significantly broader and more modern standards coverage.
+- Cross-platform graphics backends
+- Office document model
+- Rich text editing
+- Additional HTML and CSS compatibility
+- WebAssembly integration
+- Performance optimization
+- Linux, macOS, Android, and iOS support
 
----
+## Why Another Browser?
 
-# Roadmap *(subject to change)*
+Because browsers are too important to stop experimenting with.
 
-## Next Preview
+Broiler investigates whether a browser written entirely in managed .NET can improve maintainability, auditability, portability, and AI-assisted development without abandoning standards compliance.
 
-* Improved Web Platform Test compatibility
-* UI improvements
-* Expanded human review coverage
-* First preview of **Broiler Writer**
+## Why Another Office Suite?
 
-## Future Milestones
+Because office applications and browsers share the same deep foundations: structured documents, layout, styling, graphics, scripting, text, editing, and runtime services.
 
-* Cross-platform graphics backends
-* Browser shell improvements
-* Office document model
-* Rich text editing
-* Additional HTML and CSS compatibility
-* WebAssembly integration
-* Performance optimizations
+Broiler aims to build those foundations once and reuse them.
 
-## Long-Term Goals
+## Why .NET?
 
-* Complete platform independence
+Managed runtimes eliminate entire classes of memory-management problems and allow developers to focus more energy on architecture, compatibility, and correctness.
 
-  * Windows
-  * Linux
-  * Android
-  * macOS
-  * iOS
-* Standards-compliant browser platform
-* Modern office platform built on the same infrastructure
+.NET also offers strong tooling, cross-platform ambitions, mature libraries, and practical support for large-scale refactoring - all useful for a modular platform built with extensive automated testing and AI assistance.
 
----
+## The Story
 
-# Why another browser?
+Broiler started with a stubborn question:
 
-Because browsers are among the most important applications we use every day.
+> Is it possible to build a modern browser entirely in .NET?
 
-They deserve continuous experimentation.
+The usual answer was: "Use Chromium."
 
-Broiler investigates whether a browser written entirely in managed .NET can improve maintainability, auditability, portability, and AI-assisted development without sacrificing standards compliance.
+Broiler's answer is: "No. Entirely in .NET."
 
----
+Early experiments combined ideas from existing open-source projects such as **HTML Renderer** and **YantraJS**. That proved the direction was interesting, but also showed that a production-quality browser cannot be assembled by simply joining a renderer, a JavaScript engine, and a UI shell.
 
-# Why another office suite?
+The architecture was gradually rebuilt into smaller components. Test262 and Web Platform Tests became part of the development workflow. The JavaScript engine reached near-complete Test262 compatibility, and the HTML/CSS/runtime work continued from there.
 
-Modern browsers and office suites share surprisingly similar foundations:
+The broader realization came later: a browser platform and an office platform need many of the same foundations. That is when Broiler expanded from browser infrastructure into browser and office infrastructure.
 
-* Document models
-* Styling
-* Layout
-* Graphics
-* Fonts
-* Scripting
-* Runtime services
+## Name
 
-Instead of implementing these systems twice, Broiler explores building one shared platform capable of supporting both.
+Broiler began as an acronym idea:
 
----
+**Browser and Office Infrastructure in Intermediate Language with Enhanced Reliability**
 
-# Why .NET?
+The name also happens to be memorable, which helps.
 
-Managed runtimes eliminate entire classes of memory-management problems and allow developers to focus on architecture instead of low-level infrastructure.
+## Acknowledgements
 
-They also make large-scale refactoring significantly easier—an important advantage for a modular architecture developed with extensive AI assistance.
+Broiler would not exist without the work of open-source developers.
 
-Broiler exists to explore how far this engineering approach can go.
+The project was initially bootstrapped with ideas and code from projects such as **HTML Renderer** and **YantraJS**, both licensed under Apache 2.0. Many thanks to the authors and contributors of those projects for providing such a strong foundation.
 
----
+## License
 
-# Acknowledgements
-
-Broiler would not exist without the excellent work of many open-source developers.
-
-The project was initially bootstrapped using ideas and code from projects such as **HTML Renderer** and **YantraJS**, both licensed under Apache 2.0.
-
-Over time, the architecture has been extensively refactored, modularized, and expanded into a new platform.
-
-Many thanks to the authors and contributors of these projects for providing such a strong foundation.
-
----
-
-# Why the name "Broiler"?
-
-The name wasn't planned.
-
-I was looking for a memorable acronym involving **Browser**, **.NET**, and **Intermediate Language**, which eventually led to **Broiler**.
-
-Only afterwards did I remember the German word *"Broiler"* (roast chicken), which brought back childhood memories.
-
-I liked the name.
-
-The acronym came afterwards. 😄
-
----
-
-# Why is the logo a chicken using a laptop?
-
-Because the project is called **Broiler**.
-
-And because a friendly chicken working on a laptop felt like the perfect mascot for a browser and office platform. 🐔💻
+Broiler is licensed under the [Apache License 2.0](../LICENSE).
