@@ -41,6 +41,14 @@ These screenshots show the current Windows Direct2D frontend rendering real page
     <td align="center"><sub>wpt.live</sub></td>
     <td align="center"><sub>ftp.mozilla.org</sub></td>
   </tr>
+  <tr>
+    <td width="50%">
+      <img src="./writer.png" alt="Broiler Writer" />
+    </td>
+  </tr>
+  <tr>
+    <td align="center"><sub>Broiler Writer</sub></td>
+  </tr>
 </table>
 
 ## Current Status
