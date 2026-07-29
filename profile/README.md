@@ -8,11 +8,11 @@
 
 ---
 
-## Hi there 👋
+# Welcome
 
 Welcome to the **Broiler Platform**.
 
-Broiler is an open-source platform project exploring a deliberately difficult question:
+Broiler is an open-source software platform exploring a deliberately ambitious question:
 
 > **Can modern browser and office applications be built entirely in managed .NET?**
 
@@ -22,11 +22,11 @@ No embedded WebView.
 
 No native browser engine.
 
-Just managed .NET, modular architecture, standards compliance, automated testing, AI-assisted engineering, and human review.
+Just managed .NET, modular architecture, standards compliance, automated verification, AI-assisted engineering, and human review.
 
 Broiler is **not** a wrapper around an existing browser.
 
-It is a platform for building browsers, office applications, and future document-centric software on a shared managed runtime.
+It is a reusable platform for building browsers, office applications, and future document-centric software on top of a shared managed runtime.
 
 ---
 
@@ -35,37 +35,40 @@ It is a platform for building browsers, office applications, and future document
 | Component | Status |
 |-----------|--------|
 | ECMAScript (Test262) | **>99.99% passing** |
-| Web Platform Tests | **61% passing** |
-| Platforms | Windows, Linux |
-| Applications | Broiler Browser, Broiler Writer |
+| Web Platform Tests (WPT) | **68% passing** |
+| Supported Platforms | Windows, Linux |
+| Reference Applications | Browser, Writer, BOSS |
 | Document Formats | RTF, HTML, Markdown, DOCX |
 
 ---
 
-# Architecture
+# Platform Architecture
 
 ```
-                    Broiler Platform
+                           Broiler Platform
 
-     ┌───────────────────────────────────────────────┐
-     │                                               │
-     │ ECMAScript • DOM • CSS • Layout • Graphics    │
-     │ UI • Input • Document • Runtime               │
-     │                                               │
-     └───────────────────┬───────────────────────────┘
-                         │
-          ┌──────────────┴──────────────┐
-          │                             │
-   Broiler Browser              Broiler Writer
+        ┌──────────────────────────────────────────────────────┐
+        │                                                      │
+        │ ECMAScript • DOM • CSS • Layout • Graphics           │
+        │ UI • Input • Documents • Runtime                     │
+        │                                                      │
+        └─────────────────────┬────────────────────────────────┘
+                              │
+          ┌───────────────────┼───────────────────┐
+          │                   │                   │
+     Browser Desktop     Writer Desktop        WebAssembly
+                                                  │
+                                                  │
+                                                 BOSS
 ```
 
-The browser and writer are the first reference applications built on top of the shared Broiler Platform.
+The browser, writer, and BOSS are the first reference applications demonstrating how multiple application types can share a common managed platform.
 
 ---
 
 # Current Preview
 
-These screenshots show the current Windows Direct2D frontend rendering real-world content during development.
+These screenshots show the current state of Broiler during active development.
 
 <table>
   <tr>
@@ -97,12 +100,12 @@ These screenshots show the current Windows Direct2D frontend rendering real-worl
       <img src="./writer.png" alt="Broiler Writer" />
     </td>
     <td width="50%">
-      <img src="./acid1.png" alt="Acid1 - Test" />
+      <img src="./acid1.png" alt="Acid1 Test" />
     </td>
   </tr>
   <tr>
     <td align="center"><sub>Broiler Writer</sub></td>
-    <td align="center"><sub>Acid1 - Test</sub></td>
+    <td align="center"><sub>Acid1</sub></td>
   </tr>
 </table>
 
@@ -110,36 +113,59 @@ These screenshots show the current Windows Direct2D frontend rendering real-worl
 
 # Current Status
 
-Broiler is under active development and **not yet intended for production use**.
+Broiler is under active development and is **not yet intended for production use**.
 
-### Implemented
+## Core Platform
 
 - ECMAScript / JavaScript engine
 - HTML runtime
-- CSS engine (ongoing standards compliance)
+- CSS engine
 - Document model
-- Rich text editing
+- Rich text engine
 - Platform-independent UI framework
 - Platform-independent input abstraction
-- Browser frontend
-- Writer frontend
-- RTF import/export
-- HTML import/export
-- Markdown import/export
-- DOCX import/export
-- Automated Test262 integration
-- Automated Web Platform Tests (WPT)
+- Browser runtime
+- Office runtime
 
-### In Progress
+## Applications
 
-- HTML/CSS compatibility
-- Layout engine improvements
+- Broiler Browser
+- Broiler Writer
+- Broiler Office Standalone Server (BOSS)
+
+## Document Support
+
+- RTF
+- HTML
+- Markdown
+- DOCX
+
+## Automated Verification
+
+- Test262
+- Web Platform Tests (WPT)
+- Continuous standards validation
+
+## Currently in Progress
+
+- HTML and CSS compatibility improvements
+- Layout engine refinements
 - Cross-platform graphics backends
-- Browser shell
-- Office infrastructure
-- WebAssembly frontend
+- Browser shell improvements
+- WebAssembly integration
+- Performance optimization
 
-For WebAssembly Broiler plans to integrate an existing managed .NET runtime such as **WACS**, avoiding unnecessary duplication.
+For WebAssembly, Broiler plans to integrate an existing managed .NET runtime such as **WACS**, avoiding unnecessary duplication.
+
+---
+
+# Desktop and Web
+
+Broiler is designed so that the same platform components can power both native desktop applications and WebAssembly deployments.
+
+The **Broiler Office Standalone Server (BOSS)** hosts the WebAssembly version of Broiler Writer using ASP.NET Core and Kestrel, allowing the same application to run locally inside a web browser without requiring an external web server.
+
+The long-term goal is a single platform capable of powering desktop, browser, and cloud-hosted applications.
 
 ---
 
@@ -147,64 +173,72 @@ For WebAssembly Broiler plans to integrate an existing managed .NET runtime such
 
 ## 100% Managed .NET
 
-Every major subsystem is intended to be implemented in managed .NET.
+Every major subsystem is intended to be implemented entirely in managed .NET.
 
-The goal is improved maintainability, portability, auditability, and long-term evolution.
+The objective is improved maintainability, portability, auditability, and long-term evolution.
+
+---
 
 ## Standards First
 
 Compatibility is measured—not guessed.
 
-Broiler continuously validates itself using:
+Broiler continuously validates itself against industry-standard test suites including:
 
 - Test262
 - Web Platform Tests (WPT)
 
+---
+
+## Shared Platform
+
+Browsers, office applications, desktop software, and WebAssembly deployments should build upon the same reusable infrastructure whenever practical.
+
+Shared components reduce duplication, improve consistency, and simplify long-term maintenance.
+
+---
+
 ## Modular Architecture
 
-Large systems become understandable by separating them into small, focused components.
+Large systems become manageable by separating them into focused components with clearly defined responsibilities.
 
-The same modularity also makes AI-assisted development significantly more effective.
+This architecture also enables effective AI-assisted development while preserving human understanding.
+
+---
 
 ## AI-Assisted, Human-Reviewed
 
 AI accelerates implementation.
 
-Humans remain responsible for architecture, review, verification, and quality.
+Humans remain responsible for architecture, code review, verification, and quality.
 
-Every accepted change is reviewed before becoming part of the project.
-
-## Browser and Office Together
-
-Browsers and office suites share far more infrastructure than they appear to.
-
-Rather than implementing these foundations twice, Broiler builds them once.
+Every accepted contribution is reviewed before becoming part of the platform.
 
 ---
 
 # Why Broiler Exists
 
-Modern browsers and office suites are among the largest software systems in existence.
+Modern browsers and office applications are among the most complex software systems in everyday use.
 
-They share many of the same foundations:
+Despite their different user experiences, they share many of the same underlying technologies:
 
 - Document models
 - Styling
 - Layout
 - Graphics
-- Fonts
+- Text shaping
 - Input
-- Text editing
+- Editing
 - Runtime services
 - Scripting
 
-Broiler explores whether these foundations can become one reusable managed platform.
+Rather than implementing these foundations multiple times, Broiler explores building them once as reusable managed components.
 
 ---
 
 # Enhanced Reliability
 
-The **"Enhanced Reliability"** part of the name reflects the engineering philosophy behind Broiler.
+The **"Enhanced Reliability"** part of the name reflects the project's engineering philosophy.
 
 ```
 Managed .NET
@@ -212,23 +246,23 @@ Managed .NET
 + AI-Assisted Engineering
 + Human Review
 + Automated Standards Testing
---------------------------------
+--------------------------------------------------
 = Enhanced Reliability
 ```
 
-AI can generate code quickly.
+AI can generate code rapidly.
 
 Reliable browser and office infrastructure requires considerably more.
 
-Broiler therefore combines AI-assisted development with human review, modular design, and continuous standards verification.
+Broiler therefore combines AI-assisted development with modular design, automated verification, standards compliance, and human review.
 
 ---
 
 # Why .NET?
 
-Managed runtimes eliminate entire classes of memory-management issues.
+Managed runtimes eliminate entire classes of memory-management problems.
 
-Combined with modern tooling, strong refactoring support, and cross-platform capabilities, .NET provides an excellent foundation for a large modular platform.
+Combined with modern tooling, strong refactoring support, cross-platform capabilities, and mature libraries, .NET provides an excellent foundation for building long-lived infrastructure software.
 
 ---
 
@@ -244,17 +278,19 @@ Broiler investigates whether browser technology can become simpler to understand
 
 Broiler Writer is **not** intended to clone existing office suites.
 
-Instead, it serves as the reference application for the shared document platform that browsers and office applications can both build upon.
+Instead, it serves as the primary reference implementation for Broiler's shared document platform.
+
+Future office applications, editors, and document services are expected to build upon the same reusable infrastructure.
 
 ---
 
 # Project Story
 
-Broiler started with a simple question:
+Broiler began with a simple question:
 
 > **Can a modern browser be built entirely in managed .NET?**
 
-The usual answer was always:
+The common answer was always:
 
 > "Use Chromium."
 
@@ -264,15 +300,15 @@ Broiler's answer remained:
 
 Early experiments reused ideas from projects such as **HTML Renderer** and **YantraJS**.
 
-These experiments quickly demonstrated that a production-quality browser could not simply be assembled from existing components.
+Those experiments demonstrated that a production-quality browser could not simply be assembled from existing components.
 
-The architecture was gradually rebuilt into smaller modules.
+The architecture was gradually redesigned into reusable modules.
 
-Test262 and Web Platform Tests became integral parts of the development workflow.
+Automated verification through Test262 and Web Platform Tests became part of the development workflow.
 
-As the browser evolved, a second realization emerged:
+Over time another realization emerged:
 
-A browser and an office suite require almost the same underlying infrastructure.
+A browser and an office suite require many of the same foundational technologies.
 
 That insight transformed Broiler from a browser experiment into a broader application platform.
 
@@ -283,18 +319,36 @@ That insight transformed Broiler from a browser experiment into a broader applic
 Current priorities include:
 
 - Higher WPT compatibility
-- Improved HTML and CSS rendering
-- Browser shell improvements
-- Office infrastructure
+- HTML and CSS improvements
+- Browser shell
+- WebAssembly improvements
 - Cross-platform graphics
-- WebAssembly frontend
+- Office collaboration infrastructure
+- PDF support
+- Printing
 - Performance optimization
+
+---
+
+# Getting Started
+
+Interested in Broiler?
+
+- Download the latest Preview Package
+- Explore the source code
+- Try Broiler Browser
+- Try Broiler Writer
+- Host Broiler Writer using BOSS
+- Report bugs and suggestions
+- Join the discussions
+
+Feedback and contributions are always appreciated.
 
 ---
 
 # Contributing
 
-Contributions are welcome.
+Contributions of all kinds are welcome.
 
 Please read:
 
@@ -302,17 +356,17 @@ Please read:
 - CODE_OF_CONDUCT.md
 - SECURITY.md
 
-Ideas, bug reports, discussions, testing, and pull requests are always appreciated.
+Whether you contribute code, documentation, testing, ideas, or discussions, every contribution helps improve the platform.
 
 ---
 
 # Acknowledgements
 
-Broiler would not exist without the work of many open-source developers.
+Broiler would not exist without the work of the open-source community.
 
-The project was initially bootstrapped using ideas and code from projects such as **HTML Renderer** and **YantraJS**, both licensed under Apache 2.0.
+The project was initially bootstrapped using ideas and code from projects such as **HTML Renderer** and **YantraJS**, both licensed under Apache License 2.0.
 
-Many thanks to their authors and contributors.
+Many thanks to their authors and contributors for providing such a strong foundation.
 
 ---
 
