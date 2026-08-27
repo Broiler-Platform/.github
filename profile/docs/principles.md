@@ -71,22 +71,7 @@ Every accepted contribution is reviewed before becoming part of the platform. Br
 
 ---
 
-## Enhanced Reliability
-
-The **"Enhanced Reliability"** part of the name reflects the project's engineering philosophy.
-
-```text
-Managed .NET
-+ Modular Architecture
-+ Open Standards
-+ AI-Assisted Engineering
-+ Human Review
-+ Automated Verification
---------------------------------------------------
-= Enhanced Reliability
-```
-
-AI can generate code rapidly. Reliable browser and office infrastructure requires considerably more. Broiler therefore combines AI-assisted development with modular design, standards compliance, automated verification, and human review.
+Together these principles are what the name refers to: the [Enhanced Reliability](https://github.com/Broiler-Platform/.github/blob/main/profile/README.md#enhanced-reliability) formula on the platform landing page sums them up.
 
 ---
 

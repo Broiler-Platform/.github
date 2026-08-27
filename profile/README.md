@@ -65,6 +65,27 @@ Broiler is **not** a wrapper around an existing browser or office stack. It is a
 
 ---
 
+## Enhanced Reliability
+
+The **"Enhanced Reliability"** part of the name reflects the project's engineering philosophy.
+
+```text
+Managed .NET
++ Modular Architecture
++ Open Standards
++ AI-Assisted Engineering
++ Human Review
++ Automated Verification
+--------------------------------------------------
+= Enhanced Reliability
+```
+
+AI can generate code rapidly. Reliable browser and office infrastructure requires considerably more. Broiler therefore combines AI-assisted development with modular design, standards compliance, automated verification, and human review.
+
+Each part of that formula is described in [Engineering Principles](https://github.com/Broiler-Platform/.github/blob/main/profile/docs/principles.md).
+
+---
+
 ## Documentation
 
 | Document | Contents |
@@ -74,51 +95,7 @@ Broiler is **not** a wrapper around an existing browser or office stack. It is a
 | [Engineering Principles](https://github.com/Broiler-Platform/.github/blob/main/profile/docs/principles.md) | Managed .NET, standards first, security, modularity, AI + human review |
 | [Why Broiler](https://github.com/Broiler-Platform/.github/blob/main/profile/docs/why-broiler.md) | Why the platform exists, why .NET, why another browser and office |
 | [Project Story](https://github.com/Broiler-Platform/.github/blob/main/profile/docs/project-story.md) | How Broiler started, and acknowledgements |
-
----
-
-## Current Preview
-
-These screenshots show the current state of Broiler during active development.
-
-<table>
-  <tr>
-    <td width="50%">
-      <img src="./google.png" alt="Google" />
-    </td>
-    <td width="50%">
-      <img src="./7zorg.png" alt="7-Zip" />
-    </td>
-  </tr>
-  <tr>
-    <td align="center"><sub>google.de</sub></td>
-    <td align="center"><sub>7-zip.org</sub></td>
-  </tr>
-  <tr>
-    <td width="50%">
-      <img src="./wpt.png" alt="Web Platform Tests" />
-    </td>
-    <td width="50%">
-      <img src="./mozilla.png" alt="Mozilla" />
-    </td>
-  </tr>
-  <tr>
-    <td align="center"><sub>wpt.live</sub></td>
-    <td align="center"><sub>ftp.mozilla.org</sub></td>
-  </tr>
-  <tr>
-    <td width="50%">
-      <img src="./writer.png" alt="Broiler Writer" />
-    </td>
-    <td width="50%">
-      <img src="./acid1.png" alt="Acid1 Test" />
-    </td>
-  </tr>
-  <tr>
-    <td align="center"><sub>Broiler Writer</sub></td>
-    <td align="center"><sub>Acid1</sub></td>
-  </tr>
-</table>
+| [Current Preview](https://github.com/Broiler-Platform/.github/blob/main/profile/docs/screenshots.md) | Screenshots of the browser, the writer, and standards tests |
 
 ---
 
