@@ -31,10 +31,9 @@ The second point is what connects NativeAOT to the platform architecture: the sa
 |---|---|---|
 | **Writer — Windows desktop** (`win-x64`) | NativeAOT | ✅ Shipping |
 | **Writer — Linux desktop** (`linux-x64`) | NativeAOT | ✅ Shipping |
-| **Broiler.JS** | NativeAOT | 🚧 In progress — AOT sample exists, zero-warning gate open |
-| **Broiler.VM** and its language profiles | NativeAOT-compatible by design | 📋 Planned — not started |
+| **JavaScript and WebAssembly execution** | Broiler.VM language profiles, NativeAOT-compatible by design | 📋 Planned — not started |
 | **Android heads** | — | ❌ Excluded — experimental upstream |
-| **WebAssembly** | Not NativeAOT (see below) | ❌ Not applicable |
+| **WebAssembly as a deployment target** | Not NativeAOT (see below) | ❌ Not applicable |
 
 ---
 
@@ -50,16 +49,6 @@ A framework-dependent build remains available for anyone who wants one.
 
 ---
 
-## Broiler.JS — in progress
-
-Extending native compilation to JavaScript execution is under way in [`Broiler.JS`](https://github.com/Broiler-Platform/Broiler.JS). A `Broiler.JavaScript.NativeAotSample` sets `PublishAot=true` today, and the gate the work is measured against is that it must publish with **zero trim and AOT warnings and then execute a representative workload** — not merely compile.
-
-The blocking work is architectural rather than cosmetic: legacy name-based assembly probing has to be retired, because resolving a back end or a language profile by name defeats both trimming and AOT. It is treated as a blocker rather than as cleanup for that reason.
-
-Native compilation also reaches into the engine's own design decisions. `InvariantGlobalization=true` under NativeAOT is part of why some of the specification surface is implemented directly rather than delegated to platform libraries.
-
----
-
 ## Broiler.VM — planned
 
 [`Broiler.VM`](https://github.com/Broiler-Platform/Broiler.VM) is a planned NativeAOT-compatible component that executes verified bytecode artifacts.
@@ -72,6 +61,8 @@ The design idea is that Broiler.VM is a **host for language profiles, rather tha
 Two profiles are intended first: **JavaScript** and **WebAssembly**. Profiles reference the core; the core never references a profile, and a profile is added by compiling it in and registering its descriptor directly. No assembly scanning, no loading types by name, no runtime extension directory, no binary plug-in ABI — all of which follow from the NativeAOT contract described above.
 
 This is also the answer to an obvious objection. A JavaScript engine normally reaches for a JIT, and a NativeAOT program cannot generate code at runtime. A verified bytecode interpreter with language profiles is the route that keeps dynamic-language execution inside the AOT contract.
+
+**The JavaScript profile is the whole of the JavaScript-under-AOT plan.** There is no parallel effort to make the existing [`Broiler.JS`](https://github.com/Broiler-Platform/Broiler.JS) engine natively compiled. Earlier exploratory work there established what ahead-of-time compilation would demand of a JavaScript implementation — explicit registration instead of name-based probing, and an invariant-globalization surface — and those conclusions were carried into the Broiler.VM design rather than pursued separately. Broiler.JS is a legacy component in this respect: the VM's JavaScript profile is expected to begin from a snapshot copy of it, with no dependency edge in either direction.
 
 ---
 
