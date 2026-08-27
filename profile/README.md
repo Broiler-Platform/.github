@@ -33,6 +33,7 @@ Broiler is **not** a wrapper around an existing browser or office stack. It is a
 | Reference Applications | Browser, Writer |
 | Reference Deployment | BOSS |
 | Document Formats | RTF, HTML, Markdown, DOCX |
+| Native Compilation | Writer desktop heads publish with **NativeAOT** |
 
 ---
 
@@ -95,6 +96,7 @@ Each part of that formula is described in [Engineering Principles](https://githu
 | [Engineering Principles](https://github.com/Broiler-Platform/.github/blob/main/profile/docs/principles.md) | Managed .NET, standards first, security, modularity, AI + human review |
 | [Why Broiler](https://github.com/Broiler-Platform/.github/blob/main/profile/docs/why-broiler.md) | Why the platform exists, why .NET, why another browser and office |
 | [Project Story](https://github.com/Broiler-Platform/.github/blob/main/profile/docs/project-story.md) | How Broiler started, and acknowledgements |
+| [Native Compilation](https://github.com/Broiler-Platform/.github/blob/main/profile/docs/native-compilation.md) | NativeAOT: self-contained native binaries, and what that constrains |
 | [Current Preview](https://github.com/Broiler-Platform/.github/blob/main/profile/docs/screenshots.md) | Screenshots of the browser, the writer, and standards tests |
 
 ---

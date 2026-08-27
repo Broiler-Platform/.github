@@ -29,6 +29,8 @@ Broiler is designed so that the same platform components can power multiple depl
 
 The browser and writer are the first reference applications built on top of the shared Broiler Platform. BOSS demonstrates how the same document and UI infrastructure can also be deployed through WebAssembly and self-hosted using ASP.NET Core.
 
+The desktop heads are published ahead of time as self-contained native binaries — see [Native Compilation](https://github.com/Broiler-Platform/.github/blob/main/profile/docs/native-compilation.md) for what that means for the architecture, and for the difference between WebAssembly as a deployment target and WebAssembly as a planned bytecode profile.
+
 ---
 
 ## Desktop, Mobile and Web
@@ -84,4 +86,4 @@ For organizations that care about digital autonomy, local deployment, or long-li
 
 ---
 
-**See also:** [Engineering Principles](https://github.com/Broiler-Platform/.github/blob/main/profile/docs/principles.md) · [Status and Roadmap](https://github.com/Broiler-Platform/.github/blob/main/profile/docs/status.md)
+**See also:** [Native Compilation](https://github.com/Broiler-Platform/.github/blob/main/profile/docs/native-compilation.md) · [Engineering Principles](https://github.com/Broiler-Platform/.github/blob/main/profile/docs/principles.md) · [Status and Roadmap](https://github.com/Broiler-Platform/.github/blob/main/profile/docs/status.md)
