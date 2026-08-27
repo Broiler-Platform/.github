@@ -18,6 +18,7 @@ Broiler is under active development and is **not yet intended for production use
 | Reference Applications | Browser, Writer |
 | Reference Deployment | BOSS |
 | Document Formats | RTF, HTML, Markdown, DOCX |
+| Native Compilation | Writer desktop heads publish with **NativeAOT** |
 
 ---
 
@@ -49,6 +50,7 @@ Broiler is under active development and is **not yet intended for production use
 - Linux
 - Android
 - WebAssembly-based Writer deployment through BOSS
+- NativeAOT desktop publish for Broiler Writer (`win-x64`, `linux-x64`) — a single self-contained native binary with no .NET runtime dependency
 
 ### Document Support
 
@@ -75,6 +77,8 @@ Broiler is under active development and is **not yet intended for production use
 - WebAssembly improvements
 - Performance optimization
 - Broader device and platform validation
+- NativeAOT compatibility for the JavaScript engine — publishing with zero trim and AOT warnings, then executing a representative workload
+- Retiring name-based assembly probing, which defeats trimming and NativeAOT
 
 ---
 
@@ -95,5 +99,7 @@ Current priorities include:
 - Performance optimization
 - Broader Android and device validation
 - Reusable NuGet packages for platform components
+- NativeAOT publish for the JavaScript engine
+- Broiler.VM — a NativeAOT-compatible bytecode execution host, with JavaScript and WebAssembly language profiles (planned; not started)
 
 The project is currently moving from combined development snapshots toward separately versioned Preview Releases and reusable NuGet packages.

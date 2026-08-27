@@ -10,6 +10,8 @@ Every major subsystem is intended to be implemented entirely in managed .NET. Th
 
 Managed code does not automatically make software secure, but it removes entire categories of unsafe memory-management errors and provides a strong foundation for building understandable infrastructure.
 
+Managed also does not have to mean "needs a runtime installed" or "pays for a warm-up". Broiler publishes ahead-of-time compiled native binaries with **NativeAOT**, so a managed implementation can still ship as a single self-contained executable. That is a design constraint as much as a build setting — ahead-of-time compilation rules out runtime code generation and name-based discovery, which shapes how components are composed. See [Native Compilation](https://github.com/Broiler-Platform/.github/blob/main/profile/docs/native-compilation.md).
+
 ---
 
 ## Standards First
