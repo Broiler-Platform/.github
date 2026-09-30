@@ -18,7 +18,7 @@ Broiler is under active development and is **not yet intended for production use
 | Reference Applications | Browser, Writer |
 | Reference Deployment | BOSS |
 | Document Formats | RTF, HTML, Markdown, DOCX |
-| Native Compilation | Writer desktop heads publish with **NativeAOT** |
+| Native Compilation | Writer (`win-x64`, `linux-x64`) and Plate (`win-x64`) publish with **NativeAOT** |
 
 ---
 

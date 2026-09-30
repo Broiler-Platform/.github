@@ -29,40 +29,54 @@ Broiler is **not** a wrapper around an existing browser or office stack. It is a
 | WPT — ≥90% Chromium agreement | **93%** |
 | WPT — ≥97% Chromium agreement | **85%** |
 | WPT Reftests — pixel-identical | **84%** |
-| Supported Platforms | Windows, Linux, Android |
-| Reference Applications | Browser, Writer |
+| Supported Platforms | Windows, Linux, Android, WebAssembly |
+| Applications | Browser, Writer, Code, Plate, Mail |
 | Reference Deployment | BOSS |
-| Document Formats | RTF, HTML, Markdown, DOCX |
-| Native Compilation | Writer desktop heads publish with **NativeAOT** |
+| Document Formats | RTF, HTML, Markdown, DOCX, ODT, PDF *(preview)* |
+| Native Compilation | Writer *(win-x64, linux-x64)* and Plate *(win-x64)* publish with **NativeAOT** |
+| Repository Layout | 25 independently versioned repositories — 5 applications on 20 platform components ([Component Map](https://github.com/Broiler-Platform/.github/blob/main/profile/docs/component-map.md)) |
 
 ---
 
 ## Architecture at a Glance
 
+Every component is its own repository, consumed by the layer above it as a versioned
+NuGet package. Nothing in a lower layer knows about anything above it — the dependency
+graph is acyclic, and it is derived from the build files rather than drawn by hand.
+
 ```text
                             Broiler Platform
 
-        ┌──────────────────────────────────────────────────────┐
-        │                                                      │
-        │ ECMAScript • DOM • CSS • Layout • Graphics           │
-        │ UI • Input • Documents • Runtime                     │
-        │                                                      │
-        └─────────────────────┬────────────────────────────────┘
+  APPLICATIONS   Broiler.Browser · Broiler.Writer · Broiler.Code
+                 Broiler.Plate · Broiler.Mail
                               │
-          ┌───────────────────┼────────────────────┐
-          │                   │                    │
-   Broiler Browser      Broiler Writer        WebAssembly
-   Windows/Linux/       Windows/Linux/             │
-      Android              Android                 │
-                                                   │
-                                                  BOSS
+  PRESENTATION   Broiler.HtmlBridge · Broiler.HTML · Broiler.UI
+                              │
+  SEAM, LAYOUT   Broiler.JSeal · Broiler.Layout · Broiler.Documents
+  & DOCUMENTS                 │
+  ENGINES        Broiler.JS · Broiler.Graphics · Broiler.Input
+  & DEVICES                   │
+  PRIMITIVES     Broiler.CSS · Broiler.RegEx · Broiler.Media
+  & CODECS                    │
+  FOUNDATION     Broiler.DOM · Broiler.Unicode · Broiler.VM
+                 Broiler.Net · Broiler.Native
 ```
 
-| Application | What it is |
-|-------------|------------|
-| **Broiler Browser** | Reference browser on Windows, Linux and Android |
-| **Broiler Writer** | Reference office/document application, also on Android |
-| **BOSS** | Broiler Office Standalone Server — hosts the WebAssembly Writer via ASP.NET Core |
+The full wiring — who depends on whom, in both directions — is in the
+**[Component Map](https://github.com/Broiler-Platform/.github/blob/main/profile/docs/component-map.md)**.
+
+[![Broiler component map](https://raw.githubusercontent.com/Broiler-Platform/.github/main/profile/component-map.png)](https://github.com/Broiler-Platform/.github/blob/main/profile/docs/component-map.md)
+
+### Applications
+
+| Application | What it is | Heads |
+|-------------|------------|-------|
+| **Broiler Browser** | Reference browser — the full web stack end to end | Windows, Linux, Android |
+| **Broiler Writer** | Word processor and reference office application | Windows, Linux, Android, WebAssembly |
+| **Broiler Code** | Code editor with C# language services and a human-review workspace | Windows, Linux |
+| **Broiler Plate** | Read-only viewer — the smallest honest demonstration of what the platform can already read | Windows |
+| **Broiler Mail** | Mail client; v1 is a single-account reader, v2 adds SMTP sending | Windows, Linux |
+| **BOSS** | Broiler Office Standalone Server — hosts the WebAssembly Writer via ASP.NET Core | self-hosted |
 
 ---
 
@@ -93,6 +107,7 @@ Each part of that formula is described in [Engineering Principles](https://githu
 |----------|----------|
 | [Status and Roadmap](https://github.com/Broiler-Platform/.github/blob/main/profile/docs/status.md) | What works today, what is in progress, what comes next |
 | [Architecture and Deployment](https://github.com/Broiler-Platform/.github/blob/main/profile/docs/architecture.md) | Platform layers, desktop/mobile/web, self-hosting, open infrastructure |
+| [Component Map](https://github.com/Broiler-Platform/.github/blob/main/profile/docs/component-map.md) | Every component, what it owns, and what it depends on — in both directions |
 | [Engineering Principles](https://github.com/Broiler-Platform/.github/blob/main/profile/docs/principles.md) | Managed .NET, standards first, security, modularity, AI + human review |
 | [Why Broiler](https://github.com/Broiler-Platform/.github/blob/main/profile/docs/why-broiler.md) | Why the platform exists, why .NET, why another browser and office |
 | [Project Story](https://github.com/Broiler-Platform/.github/blob/main/profile/docs/project-story.md) | How Broiler started, and acknowledgements |
@@ -105,9 +120,9 @@ Each part of that formula is described in [Engineering Principles](https://githu
 
 - [Download the latest Preview Release](https://github.com/Broiler-Platform/Broiler/releases)
 - Explore the [source code](https://github.com/Broiler-Platform/Broiler)
-- Try Broiler Browser and Broiler Writer
+- Try [Browser](https://github.com/Broiler-Platform/Broiler.Browser), [Writer](https://github.com/Broiler-Platform/Broiler.Writer), [Code](https://github.com/Broiler-Platform/Broiler.Code), [Plate](https://github.com/Broiler-Platform/Broiler.Plate) or [Mail](https://github.com/Broiler-Platform/Broiler.Mail)
 - Run the Writer through BOSS
-- Explore upcoming NuGet packages for platform components
+- Build on the platform directly — components publish as NuGet preview packages
 - [Report bugs and compatibility problems](https://github.com/Broiler-Platform/Broiler/issues)
 
 Feedback and contributions are always appreciated.

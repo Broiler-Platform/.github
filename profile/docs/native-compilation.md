@@ -31,15 +31,16 @@ The second point is what connects NativeAOT to the platform architecture: the sa
 |---|---|---|
 | **Writer — Windows desktop** (`win-x64`) | NativeAOT | ✅ Shipping |
 | **Writer — Linux desktop** (`linux-x64`) | NativeAOT | ✅ Shipping |
+| **Plate — Windows desktop** (`win-x64`) | NativeAOT | ✅ Shipping |
 | **JavaScript and WebAssembly execution** | Broiler.VM language profiles, NativeAOT-compatible by design | 📋 Planned — not started |
 | **Android heads** | — | ❌ Excluded — experimental upstream |
 | **WebAssembly as a deployment target** | Not NativeAOT (see below) | ❌ Not applicable |
 
 ---
 
-## Broiler Writer — shipping today
+## Shipping today
 
-The two desktop heads of Broiler Writer publish with NativeAOT. The `win-x64` and `linux-x64` artifacts are **a single self-contained native binary that runs with no .NET runtime installed** — 9.2 MB for the Windows head, against a 162-file framework-dependent drop.
+The two desktop heads of Broiler Writer publish with NativeAOT, and so does the Windows head of Broiler Plate. Each artifact is **a single self-contained native binary that runs with no .NET runtime installed** — 9.2 MB for the Writer's Windows head, against a 162-file framework-dependent drop.
 
 It publishes cleanly rather than by suppression: an AOT publish of the Windows head reports **zero `IL2xxx`/`IL3xxx` warnings**, and the Linux head reports zero under the trim, AOT, and single-file analyzers.
 

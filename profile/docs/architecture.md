@@ -8,34 +8,64 @@ Broiler is designed so that the same platform components can power multiple depl
 
 ## Platform Layers
 
+Each layer is a set of independently versioned repositories. A component consumes the
+layer beneath it as a NuGet package, never the other way round: the dependency graph is
+acyclic, and it is derived from the `.csproj` files rather than drawn by hand.
+
 ```text
                             Broiler Platform
 
-        ┌──────────────────────────────────────────────────────┐
-        │                                                      │
-        │ ECMAScript • DOM • CSS • Layout • Graphics           │
-        │ UI • Input • Documents • Runtime                     │
-        │                                                      │
-        └─────────────────────┬────────────────────────────────┘
+  APPLICATIONS   Broiler.Browser · Broiler.Writer · Broiler.Code
+                 Broiler.Plate · Broiler.Mail
                               │
-          ┌───────────────────┼────────────────────┐
-          │                   │                    │
-   Broiler Browser      Broiler Writer        WebAssembly
-   Windows/Linux/       Windows/Linux/             │
-      Android              Android                 │
-                                                   │
-                                                  BOSS
+  PRESENTATION   Broiler.HtmlBridge · Broiler.HTML · Broiler.UI
+                              │
+  SEAM, LAYOUT   Broiler.JSeal · Broiler.Layout · Broiler.Documents
+  & DOCUMENTS                 │
+  ENGINES        Broiler.JS · Broiler.Graphics · Broiler.Input
+  & DEVICES                   │
+  PRIMITIVES     Broiler.CSS · Broiler.RegEx · Broiler.Media
+  & CODECS                    │
+  FOUNDATION     Broiler.DOM · Broiler.Unicode · Broiler.VM
+                 Broiler.Net · Broiler.Native
 ```
 
-The browser and writer are the first reference applications built on top of the shared Broiler Platform. BOSS demonstrates how the same document and UI infrastructure can also be deployed through WebAssembly and self-hosted using ASP.NET Core.
+The per-component wiring, in both directions, is in the
+[Component Map](https://github.com/Broiler-Platform/.github/blob/main/profile/docs/component-map.md).
 
-The desktop heads are published ahead of time as self-contained native binaries — see [Native Compilation](https://github.com/Broiler-Platform/.github/blob/main/profile/docs/native-compilation.md) for what that means for the architecture, and for the difference between WebAssembly as a deployment target and WebAssembly as a planned bytecode profile.
+Two properties of this layering are worth stating explicitly, because they are what the
+split into separate repositories buys:
+
+- **The two application stacks are mostly disjoint.** The browser stack reaches down through
+  `Broiler.HtmlBridge` → `Broiler.JSeal` → `Broiler.JS`; the office stack reaches down through
+  `Broiler.UI` → `Broiler.Documents`. They meet only at the shared device and rendering base
+  (`Broiler.Graphics`, `Broiler.Input`, `Broiler.Media`, `Broiler.Native`). Broiler.Writer
+  references neither the HTML renderer nor the JavaScript engine.
+- **Script-engine coupling is isolated in one component.** `Broiler.JSeal` is the only
+  assembly allowed to name both the scripting contract and a concrete engine. That is what
+  lets the DOM bindings reach an engine without depending on which engine it is.
+
+BOSS demonstrates how the same document and UI infrastructure can also be deployed through
+WebAssembly and self-hosted using ASP.NET Core.
+
+The Writer's two desktop heads and the Plate Windows head are published ahead of time as self-contained native binaries — see [Native Compilation](https://github.com/Broiler-Platform/.github/blob/main/profile/docs/native-compilation.md) for what that means for the architecture, and for the difference between WebAssembly as a deployment target and WebAssembly as a planned bytecode profile.
 
 ---
 
 ## Desktop, Mobile and Web
 
-The desktop applications run directly on Windows and Linux. Broiler Browser and Broiler Writer also have Android application heads.
+An application is a thin head over the shared platform, and each head is its own project.
+Which heads exist today:
+
+| Application | Windows | Linux | Android | WebAssembly |
+|---|:-:|:-:|:-:|:-:|
+| **Broiler Browser** | ✅ | ✅ | ✅ | — |
+| **Broiler Writer** | ✅ | ✅ | ✅ | ✅ *(via BOSS)* |
+| **Broiler Code** | ✅ | ✅ | — | — |
+| **Broiler Plate** | ✅ | — | — | — |
+| **Broiler Mail** | ✅ | ✅ | — | — |
+
+The desktop applications run directly on Windows and Linux; Browser and Writer also have Android heads.
 
 The **Broiler Office Standalone Server (BOSS)** hosts the WebAssembly version of Broiler Writer using ASP.NET Core and Kestrel. This allows the Writer to run in a browser without depending on a third-party hosted office platform or an external application server.
 
@@ -86,4 +116,4 @@ For organizations that care about digital autonomy, local deployment, or long-li
 
 ---
 
-**See also:** [Native Compilation](https://github.com/Broiler-Platform/.github/blob/main/profile/docs/native-compilation.md) · [Engineering Principles](https://github.com/Broiler-Platform/.github/blob/main/profile/docs/principles.md) · [Status and Roadmap](https://github.com/Broiler-Platform/.github/blob/main/profile/docs/status.md)
+**See also:** [Component Map](https://github.com/Broiler-Platform/.github/blob/main/profile/docs/component-map.md) · [Native Compilation](https://github.com/Broiler-Platform/.github/blob/main/profile/docs/native-compilation.md) · [Engineering Principles](https://github.com/Broiler-Platform/.github/blob/main/profile/docs/principles.md) · [Status and Roadmap](https://github.com/Broiler-Platform/.github/blob/main/profile/docs/status.md)
