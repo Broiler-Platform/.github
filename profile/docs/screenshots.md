@@ -23,15 +23,15 @@ These screenshots show the current state of Broiler during active development. R
   </tr>
   <tr>
     <td width="50%">
-      <img src="../mozilla.png" alt="ftp.mozilla.org rendered in Broiler Browser" />
+      <img src="../mediawiki.png" alt="mediawiki rendered in Broiler Browser" />
     </td>
     <td width="50%">
-      <img src="../wpt.png" alt="wpt.live rendered in Broiler Browser" />
+      <img src="../duckduckgo.png" alt="duckduckgo rendered in Broiler Browser" />
     </td>
   </tr>
   <tr>
-    <td align="center"><sub>ftp.mozilla.org</sub></td>
-    <td align="center"><sub>wpt.live</sub></td>
+    <td align="center"><sub>mediawiki</sub></td>
+    <td align="center"><sub>duckduckgo</sub></td>
   </tr>
 </table>
 
