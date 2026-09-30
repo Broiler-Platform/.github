@@ -44,11 +44,13 @@ These screenshots show the current state of Broiler during active development. R
     <td width="50%">
       <img src="../writer.png" alt="Broiler Writer" />
     </td>
-    <td width="50%"></td>
+    <td width="50%">
+      <img src="../writer-webassembly.png" alt="Broiler Writer in WebAssembly" />
+    </td>
   </tr>
   <tr>
     <td align="center"><sub>Broiler Writer</sub></td>
-    <td></td>
+    <td align="center"><sub>Broiler Writer in WebAssembly</sub></td>
   </tr>
 </table>
 
