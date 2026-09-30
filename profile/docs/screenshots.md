@@ -61,11 +61,13 @@ These screenshots show the current state of Broiler during active development. R
     <td width="50%">
       <img src="../acid1.png" alt="Acid1 test rendered in Broiler" />
     </td>
-    <td width="50%"></td>
+    <td width="50%">
+      <img src="../acid2.png" alt="Acid2 test rendered in Broiler" />
+    </td>
   </tr>
   <tr>
     <td align="center"><sub>Acid1</sub></td>
-    <td></td>
+    <td align="center"><sub>Acid2</sub></td>
   </tr>
 </table>
 
