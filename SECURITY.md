@@ -90,11 +90,12 @@ If you are unsure which side a finding falls on, report it privately and let the
 
 | Version | Supported |
 |---------|-----------|
-| Latest [Preview Release](https://github.com/Broiler-Platform/Broiler/releases) | ✅ |
-| `main` branch | ✅ |
-| Earlier previews and development snapshots | ❌ |
+| The latest Preview Release of the affected application — [Browser](https://github.com/Broiler-Platform/Broiler.Browser/releases), [Writer](https://github.com/Broiler-Platform/Broiler.Writer/releases), [Plate](https://github.com/Broiler-Platform/Broiler.Plate/releases) | ✅ |
+| The latest preview NuGet package of the affected component | ✅ |
+| `main` branch of the affected repository | ✅ |
+| Earlier previews, and the discontinued combined snapshots from the `Broiler` superproject | ❌ |
 
-Fixes land on `main` and reach users in the next Preview Release. There are no long-term support branches, and prior previews are not patched.
+Each application and each platform component releases from its own repository, so "the latest release" is per repository rather than one number for the whole platform. Fixes land on `main` and reach users in that repository's next preview. There are no long-term support branches, and prior previews are not patched.
 
 ---
 

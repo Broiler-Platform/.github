@@ -3,7 +3,7 @@
 > **Browser and Office Infrastructure in Intermediate Language with Enhanced Reliability**
 
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](https://github.com/Broiler-Platform/.github/blob/main/LICENSE)
-[![Releases](https://img.shields.io/badge/releases-preview-brightgreen.svg)](https://github.com/Broiler-Platform/Broiler/releases)
+[![Releases](https://img.shields.io/badge/releases-per%20application-brightgreen.svg)](#getting-started)
 [![Platforms](https://img.shields.io/badge/platforms-Windows%20%7C%20Linux%20%7C%20Android%20%7C%20WebAssembly-lightgrey.svg)](https://github.com/Broiler-Platform/.github/blob/main/profile/docs/architecture.md)
 
 Broiler is an open-source software platform exploring a deliberately ambitious question:
@@ -118,12 +118,28 @@ Each part of that formula is described in [Engineering Principles](https://githu
 
 ## Getting Started
 
-- [Download the latest Preview Release](https://github.com/Broiler-Platform/Broiler/releases)
-- Explore the [source code](https://github.com/Broiler-Platform/Broiler)
-- Try [Browser](https://github.com/Broiler-Platform/Broiler.Browser), [Writer](https://github.com/Broiler-Platform/Broiler.Writer), [Code](https://github.com/Broiler-Platform/Broiler.Code), [Plate](https://github.com/Broiler-Platform/Broiler.Plate) or [Mail](https://github.com/Broiler-Platform/Broiler.Mail)
+Each application releases on its own schedule, from its own repository:
+
+| Application | Latest preview | Builds |
+|---|---|---|
+| **Broiler Browser** | [Releases](https://github.com/Broiler-Platform/Broiler.Browser/releases) | `win-x64`, `linux-x64`, Android `.apk` / `.aab` |
+| **Broiler Writer** | [Releases](https://github.com/Broiler-Platform/Broiler.Writer/releases) | `win-x64`, `linux-x64` *(NativeAOT)*, Android `.apk` / `.aab` |
+| **Broiler Plate** | [Releases](https://github.com/Broiler-Platform/Broiler.Plate/releases) | `win-x64` *(NativeAOT)* |
+| **Broiler Code** | build from [source](https://github.com/Broiler-Platform/Broiler.Code) | no release yet |
+| **Broiler Mail** | build from [source](https://github.com/Broiler-Platform/Broiler.Mail) | no release yet |
+
+Then:
+
 - Run the Writer through BOSS
 - Build on the platform directly — components publish as NuGet preview packages
-- [Report bugs and compatibility problems](https://github.com/Broiler-Platform/Broiler/issues)
+- Explore the [source code](https://github.com/Broiler-Platform/Broiler), or a single component from the [Component Map](https://github.com/Broiler-Platform/.github/blob/main/profile/docs/component-map.md)
+- Report bugs and compatibility problems on the repository they belong to
+
+> [!NOTE]
+> The combined development snapshots that were published from the
+> [`Broiler`](https://github.com/Broiler-Platform/Broiler) superproject are discontinued.
+> The last one was the Final Broiler Preview Package of August 2026; everything since then
+> ships per application.
 
 Feedback and contributions are always appreciated.
 
