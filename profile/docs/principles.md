@@ -69,7 +69,7 @@ It also makes AI-assisted development significantly more effective while preserv
 
 AI accelerates implementation. Humans remain responsible for architecture, review, verification, and quality.
 
-Every accepted contribution is reviewed before becoming part of the platform. Broiler treats AI as an engineering tool — not as the owner of the codebase.
+Human review must be established by the exact-commit component record or a current per-file attestation; pending and stale records do not count as approval. Broiler treats AI as an engineering tool — not as the owner of the codebase.
 
 ---
 

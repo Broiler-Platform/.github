@@ -25,42 +25,31 @@ Broiler is **not** a wrapper around an existing browser or office stack. It is a
 
 | Component | Status |
 |-----------|--------|
-| ECMAScript (Test262) | **>99.99% passing** |
-| WPT — ≥90% Chromium agreement | **93%** |
-| WPT — ≥97% Chromium agreement | **85%** |
-| WPT Reftests — pixel-identical | **84%** |
+| Standards verification | Test262, WPT and reftest tooling; current figures require revision-linked evidence ([status](https://github.com/Broiler-Platform/.github/blob/main/profile/docs/status.md)) |
 | Supported Platforms | Windows, Linux, Android, WebAssembly |
 | Applications | Browser, Writer, Code, Plate, Mail |
 | Reference Deployment | BOSS |
-| Document Formats | RTF, HTML, Markdown, DOCX, ODT, PDF *(preview)* |
-| Native Compilation | Writer *(win-x64, linux-x64)* and Plate *(win-x64)* publish with **NativeAOT** |
-| Repository Layout | 25 independently versioned repositories — 5 applications on 20 platform components ([Component Map](https://github.com/Broiler-Platform/.github/blob/main/profile/docs/component-map.md)) |
+| Document Formats | RTF, HTML, Markdown, DOCX, ODT, CSV, PDF *(preview subset)* |
+| Native Compilation | Writer *(win-x64, linux-x64)* and Plate *(win-x64)* publish paths; Mail *(win-x64, win-arm64)* validation packaging uses **NativeAOT** |
+| Repository Layout | 26 component submodules — 5 primary applications, shared libraries and projects under development ([Component Map](https://github.com/Broiler-Platform/.github/blob/main/profile/docs/component-map.md)) |
 
 ---
 
 ## Architecture at a Glance
 
-Every component is its own repository, consumed by the layer above it as a versioned
-NuGet package. Nothing in a lower layer knows about anything above it — the dependency
-graph is acyclic, and it is derived from the build files rather than drawn by hand.
+The aggregate checkout pins component repositories as Git submodules and owns integration tooling, tests and BOSS. Components consume one another through NuGet packages, with project references within each repository. The generated map contains **26 components and 70 declared dependency edges**, including optional and conditional paths, as of **21 October 2026**.
 
-```text
-                            Broiler Platform
-
-  APPLICATIONS   Broiler.Browser · Broiler.Writer · Broiler.Code
-                 Broiler.Plate · Broiler.Mail
-                              │
-  PRESENTATION   Broiler.HtmlBridge · Broiler.HTML · Broiler.UI
-                              │
-  SEAM, LAYOUT   Broiler.JSeal · Broiler.Layout · Broiler.Documents
-  & DOCUMENTS                 │
-  ENGINES        Broiler.JS · Broiler.Graphics · Broiler.Input
-  & DEVICES                   │
-  PRIMITIVES     Broiler.CSS · Broiler.RegEx · Broiler.Media
-  & CODECS                    │
-  FOUNDATION     Broiler.DOM · Broiler.Unicode · Broiler.VM
-                 Broiler.Net · Broiler.Native
+```mermaid
+flowchart TD
+    Apps[Browser / Writer / Code / Plate / Mail] --> Hosting[Hosting and UI]
+    Apps --> Web[HtmlBridge / HTML / CSS / DOM / Layout]
+    Hosting --> Documents[Documents and pagination]
+    Web --> Engines[JSEAL providers: Broiler.JS and Broiler.VM]
+    Hosting --> Devices[Graphics / Input / Media / Native]
+    Documents --> Devices
 ```
+
+This is a conceptual overview; direct references, scan scope and source evidence are in the component map. Broiler.VM and Fond have implementation work but retain acceptance gates.
 
 The full wiring — who depends on whom, in both directions — is in the
 **[Component Map](https://github.com/Broiler-Platform/.github/blob/main/profile/docs/component-map.md)**.
@@ -75,7 +64,7 @@ The full wiring — who depends on whom, in both directions — is in the
 | **Broiler Writer** | Word processor and reference office application | Windows, Linux, Android, WebAssembly |
 | **Broiler Code** | Code editor with C# language services and a human-review workspace | Windows, Linux |
 | **Broiler Plate** | Read-only viewer — the smallest honest demonstration of what the platform can already read | Windows |
-| **Broiler Mail** | Mail client; v1 is a single-account reader, v2 adds SMTP sending | Windows, Linux |
+| **Broiler Mail** | Mail client — Single-account reader with SMTP composition and HTML preview work; provider acceptance and renderer isolation remain open | Windows, Android; Linux placeholder |
 | **BOSS** | Broiler Office Standalone Server — hosts the WebAssembly Writer via ASP.NET Core | self-hosted |
 
 ---
@@ -122,24 +111,23 @@ Each application releases on its own schedule, from its own repository:
 
 | Application | Latest preview | Builds |
 |---|---|---|
-| **Broiler Browser** | [Releases](https://github.com/Broiler-Platform/Broiler.Browser/releases) | `win-x64`, `linux-x64`, Android `.apk` / `.aab` |
-| **Broiler Writer** | [Releases](https://github.com/Broiler-Platform/Broiler.Writer/releases) | `win-x64`, `linux-x64` *(NativeAOT)*, Android `.apk` / `.aab` |
+| **Broiler Browser** | [Releases](https://github.com/Broiler-Platform/Broiler.Browser/releases) | `win-x64` and `linux-x64`, each self-contained or framework-dependent · Android `.apk` / `.aab` |
+| **Broiler Writer** | [Releases](https://github.com/Broiler-Platform/Broiler.Writer/releases) | `win-x64` and `linux-x64`, self-contained *(NativeAOT)* or framework-dependent · Android `.apk` / `.aab` |
 | **Broiler Plate** | [Releases](https://github.com/Broiler-Platform/Broiler.Plate/releases) | `win-x64` *(NativeAOT)* |
 | **Broiler Code** | build from [source](https://github.com/Broiler-Platform/Broiler.Code) | no release yet |
-| **Broiler Mail** | build from [source](https://github.com/Broiler-Platform/Broiler.Mail) | no release yet |
+| **Broiler Mail** | [Source and workflows](https://github.com/Broiler-Platform/Broiler.Mail) | Windows x64/ARM64 and Android validation packaging; unsigned builds and draft releases |
 
 Then:
 
 - Run the Writer through BOSS
 - Build on the platform directly — components publish as NuGet preview packages
-- Explore the [source code](https://github.com/Broiler-Platform/Broiler), or a single component from the [Component Map](https://github.com/Broiler-Platform/.github/blob/main/profile/docs/component-map.md)
+- Read the source — each application and each component is its own repository; the [Component Map](https://github.com/Broiler-Platform/.github/blob/main/profile/docs/component-map.md) is the index
 - Report bugs and compatibility problems on the repository they belong to
 
 > [!NOTE]
-> The combined development snapshots that were published from the
-> [`Broiler`](https://github.com/Broiler-Platform/Broiler) superproject are discontinued.
-> The last one was the Final Broiler Preview Package of August 2026; everything since then
-> ships per application.
+> The combined development snapshots are discontinued. The last one was the Final Broiler
+> Preview Package of August 2026; everything since then ships per application, from that
+> application's own repository.
 
 Feedback and contributions are always appreciated.
 

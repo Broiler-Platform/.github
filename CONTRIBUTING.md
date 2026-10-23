@@ -24,23 +24,32 @@ A small, well-reduced test case is often worth more than a long bug description.
 
 ## Where to open your pull request
 
-This is the part that trips up new contributors. [`Broiler-Platform/Broiler`](https://github.com/Broiler-Platform/Broiler) is an umbrella repository: the engine components are **git submodules** pointing at their own repositories.
+This is the part that trips up new contributors. Every application and every platform component is its own repository, released on its own schedule. [`Broiler-Platform/Broiler`](https://github.com/Broiler-Platform/Broiler) is only an umbrella that pins them as **git submodules** — it also owns integration tools, tests and BOSS.
 
-That means a fix to the CSS engine belongs in `Broiler-Platform/Broiler.CSS`, **not** in the umbrella repo.
+That means a fix to the CSS engine belongs in `Broiler-Platform/Broiler.CSS`, **not** in the umbrella repo. The [Component Map](https://github.com/Broiler-Platform/.github/blob/main/profile/docs/component-map.md) shows what each component owns and what depends on it.
 
 | If you are changing… | Open the PR against |
 |---|---|
-| JavaScript engine | [`Broiler.JS`](https://github.com/Broiler-Platform/Broiler.JS) |
-| CSS parsing and cascade | [`Broiler.CSS`](https://github.com/Broiler-Platform/Broiler.CSS) |
-| HTML parsing and rendering | [`Broiler.HTML`](https://github.com/Broiler-Platform/Broiler.HTML) |
-| DOM | [`Broiler.DOM`](https://github.com/Broiler-Platform/Broiler.DOM) |
-| Graphics and text shaping | [`Broiler.Graphics`](https://github.com/Broiler-Platform/Broiler.Graphics) |
-| UI framework | [`Broiler.UI`](https://github.com/Broiler-Platform/Broiler.UI) |
-| Input abstraction | [`Broiler.Input`](https://github.com/Broiler-Platform/Broiler.Input) |
-| Media | [`Broiler.Media`](https://github.com/Broiler-Platform/Broiler.Media) |
+| An application — browser, word processor, code editor, viewer, mail | [`Broiler.Browser`](https://github.com/Broiler-Platform/Broiler.Browser) / [`Broiler.Writer`](https://github.com/Broiler-Platform/Broiler.Writer) / [`Broiler.Code`](https://github.com/Broiler-Platform/Broiler.Code) / [`Broiler.Plate`](https://github.com/Broiler-Platform/Broiler.Plate) / [`Broiler.Mail`](https://github.com/Broiler-Platform/Broiler.Mail) |
+| Windowing, clipboard, DPI, system theme | [`Broiler.Hosting`](https://github.com/Broiler-Platform/Broiler.Hosting) |
+| Embeddable HTML control — DOM bindings, script realm, host seam | [`Broiler.HtmlBridge`](https://github.com/Broiler-Platform/Broiler.HtmlBridge) |
+| HTML rendering and painting | [`Broiler.HTML`](https://github.com/Broiler-Platform/Broiler.HTML) |
+| UI framework and widgets | [`Broiler.UI`](https://github.com/Broiler-Platform/Broiler.UI) |
+| Script-engine seam | [`Broiler.JSeal`](https://github.com/Broiler-Platform/Broiler.JSeal) |
+| CSS box model and layout | [`Broiler.Layout`](https://github.com/Broiler-Platform/Broiler.Layout) |
 | Document model and formats | [`Broiler.Documents`](https://github.com/Broiler-Platform/Broiler.Documents) |
-| Browser or Writer application shell | [`Broiler.Browser`](https://github.com/Broiler-Platform/Broiler.Browser) / [`Broiler.Writer`](https://github.com/Broiler-Platform/Broiler.Writer) |
-| Layout, CLI, WPT runner, BOSS, build and tooling | [`Broiler`](https://github.com/Broiler-Platform/Broiler) |
+| JavaScript engine | [`Broiler.JS`](https://github.com/Broiler-Platform/Broiler.JS) |
+| Graphics and text shaping | [`Broiler.Graphics`](https://github.com/Broiler-Platform/Broiler.Graphics) |
+| Input abstraction | [`Broiler.Input`](https://github.com/Broiler-Platform/Broiler.Input) |
+| CSS parsing and cascade | [`Broiler.CSS`](https://github.com/Broiler-Platform/Broiler.CSS) |
+| Media decoding | [`Broiler.Media`](https://github.com/Broiler-Platform/Broiler.Media) |
+| Regex engine | [`Broiler.RegEx`](https://github.com/Broiler-Platform/Broiler.RegEx) |
+| DOM and HTML parsing | [`Broiler.DOM`](https://github.com/Broiler-Platform/Broiler.DOM) |
+| Networking | [`Broiler.Net`](https://github.com/Broiler-Platform/Broiler.Net) |
+| Native bindings — P/Invoke, COM, ABI | [`Broiler.Native`](https://github.com/Broiler-Platform/Broiler.Native) |
+| Bytecode host and in-component language profile projects | [`Broiler.VM`](https://github.com/Broiler-Platform/Broiler.VM) |
+| Unicode tables, date/time primitives | [`Broiler.Unicode`](https://github.com/Broiler-Platform/Broiler.Unicode) / [`Broiler.DateTime`](https://github.com/Broiler-Platform/Broiler.DateTime) |
+| CLI, WPT runner, BOSS, cross-repo build tooling | [`Broiler`](https://github.com/Broiler-Platform/Broiler) |
 
 If a change spans several components, open a PR per repository and link them to each other. If you are unsure where something belongs, open an issue on the umbrella repository first and ask.
 
@@ -48,30 +57,38 @@ If a change spans several components, open a PR per repository and link them to 
 
 ## Building and testing
 
-Broiler targets **.NET 10**. Clone with submodules — the build will not work without them:
+Broiler targets **.NET 10**. Clone the repository you are changing — each one builds on
+its own, resolving the components beneath it from NuGet:
+
+```bash
+git clone https://github.com/Broiler-Platform/Broiler.CSS.git
+```
+
+Each repository carries its own solution file and CI workflow, and the workflow is the
+authoritative build: if `.github/workflows/ci.yml` builds and tests it in one command, so
+can you.
+
+```bash
+dotnet build Broiler.CSS.slnx -c Release
+dotnet test  Broiler.CSS.slnx -c Release
+```
+
+You only need the umbrella [`Broiler`](https://github.com/Broiler-Platform/Broiler) repository
+for the cross-repo tooling that lives there — the CLI, the WPT runner, BOSS, and builds that
+span several components at once. That one does need its submodules:
 
 ```bash
 git clone --recurse-submodules https://github.com/Broiler-Platform/Broiler.git
-```
-
-If you already cloned without `--recurse-submodules`:
-
-```bash
+# or, in an existing clone:
 git submodule update --init --recursive
 ```
 
-Full build, test, and run instructions live in the [Broiler README](https://github.com/Broiler-Platform/Broiler#build-and-test) — they are maintained there so they stay next to the code.
-
 Two things worth knowing before your first build:
 
-- Broiler uses **platform-specific configurations** rather than plain `Debug` and `Release`: `Debug-Windows`, `Release-Windows`, `Debug-Linux`, `Release-Linux`. Pass the one matching your target.
-- Solutions are `.slnx` files, split by target and purpose (`Broiler.Windows.Code.slnx`, `Broiler.Tests.slnx`, `Broiler.Wpt.slnx`, `Broiler.Office.Server.slnx`, and others). Build the one covering your change rather than everything.
+- Broiler uses **platform-specific configurations** rather than plain `Debug` and `Release`: `Debug-Windows`, `Release-Windows`, `Debug-Linux`, `Release-Linux`. Pass the one matching your target where a repository defines them.
+- Solutions are `.slnx` files. A component repository usually has one; the umbrella splits them by target and purpose (`Broiler.Tests.slnx`, `Broiler.Wpt.slnx`, `Broiler.Office.Server.slnx`, and others). Build the one covering your change rather than everything.
 
-Run the test suite before opening a PR:
-
-```bash
-dotnet test Broiler.Tests.slnx
-```
+Run that repository's tests before opening a PR.
 
 Changes to engine behavior should also be checked against the standards suites — the Test262, WPT, and reftest runners under `scripts/` — so that a fix in one area does not regress another.
 

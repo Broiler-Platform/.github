@@ -1,0 +1,3034 @@
+{
+  "date": "2026-10-21",
+  "aggregate_commit": "4b71911134617a7cfb7bc93106c17a0fd1b0d54d",
+  "scope": "Component-owned tracked product csproj files; all declared conditions included; no MSBuild evaluation; excludes tests, samples, demos, benchmarks, eng, tools and docs.",
+  "components": [
+    {
+      "name": "Broiler.Browser",
+      "commit": "115ac3e1d59641e2565a9022feedc2d374289f60",
+      "tracked_changes": "",
+      "projects": 6,
+      "level": 6,
+      "dependencies": [
+        "Broiler.CSS",
+        "Broiler.DOM",
+        "Broiler.Documents",
+        "Broiler.Graphics",
+        "Broiler.HTML",
+        "Broiler.Hosting",
+        "Broiler.HtmlBridge",
+        "Broiler.Input",
+        "Broiler.Layout",
+        "Broiler.Net",
+        "Broiler.UI"
+      ]
+    },
+    {
+      "name": "Broiler.CSS",
+      "commit": "521e6cda3053e2381034df1aef798d5f2e1b2bae",
+      "tracked_changes": "",
+      "projects": 2,
+      "level": 1,
+      "dependencies": [
+        "Broiler.DOM"
+      ]
+    },
+    {
+      "name": "Broiler.Code",
+      "commit": "54ce0b9339a0988358f9d39500cfa0c709000e38",
+      "tracked_changes": "",
+      "projects": 9,
+      "level": 6,
+      "dependencies": [
+        "Broiler.Graphics",
+        "Broiler.Hosting",
+        "Broiler.Input",
+        "Broiler.UI"
+      ]
+    },
+    {
+      "name": "Broiler.DOM",
+      "commit": "503560f09c2534bc9532a54a9078824b70acda32",
+      "tracked_changes": "",
+      "projects": 2,
+      "level": 0,
+      "dependencies": []
+    },
+    {
+      "name": "Broiler.DateTime",
+      "commit": "8de12cc335170fb17ef9055458a125982e089b61",
+      "tracked_changes": "",
+      "projects": 1,
+      "level": 0,
+      "dependencies": []
+    },
+    {
+      "name": "Broiler.Documents",
+      "commit": "a8330f751e8cba76d82e3038e195498a8ccf021c",
+      "tracked_changes": "",
+      "projects": 14,
+      "level": 3,
+      "dependencies": [
+        "Broiler.DOM",
+        "Broiler.Graphics",
+        "Broiler.Media"
+      ]
+    },
+    {
+      "name": "Broiler.Fond",
+      "commit": "ab4e3f701184b48c71f9bb5badb57ee29937df97",
+      "tracked_changes": "",
+      "projects": 2,
+      "level": 0,
+      "dependencies": []
+    },
+    {
+      "name": "Broiler.Graphics",
+      "commit": "adb95848312c5c101ae03cb49defe6f056a51a0b",
+      "tracked_changes": "",
+      "projects": 7,
+      "level": 2,
+      "dependencies": [
+        "Broiler.Media",
+        "Broiler.Native"
+      ]
+    },
+    {
+      "name": "Broiler.HTML",
+      "commit": "afc95ae778c0fc5873f25cd8e11416f73b6385b6",
+      "tracked_changes": "",
+      "projects": 7,
+      "level": 4,
+      "dependencies": [
+        "Broiler.CSS",
+        "Broiler.DOM",
+        "Broiler.Graphics",
+        "Broiler.Layout",
+        "Broiler.Media",
+        "Broiler.Net"
+      ]
+    },
+    {
+      "name": "Broiler.Hosting",
+      "commit": "bc87488fbaab10574b039239f6be8a9830289dd4",
+      "tracked_changes": "",
+      "projects": 3,
+      "level": 5,
+      "dependencies": [
+        "Broiler.Graphics",
+        "Broiler.Input",
+        "Broiler.Native",
+        "Broiler.UI"
+      ]
+    },
+    {
+      "name": "Broiler.HtmlBridge",
+      "commit": "c253d1a35d17331eabe867bce1cd3eda852b2992",
+      "tracked_changes": "",
+      "projects": 5,
+      "level": 5,
+      "dependencies": [
+        "Broiler.CSS",
+        "Broiler.DOM",
+        "Broiler.JS",
+        "Broiler.JSeal",
+        "Broiler.Layout",
+        "Broiler.Net"
+      ]
+    },
+    {
+      "name": "Broiler.Input",
+      "commit": "a7b5f43729574c70c1bd412a07e6df7f7105c7d7",
+      "tracked_changes": "",
+      "projects": 24,
+      "level": 2,
+      "dependencies": [
+        "Broiler.Media",
+        "Broiler.Native"
+      ]
+    },
+    {
+      "name": "Broiler.JS",
+      "commit": "5654ff8f2b8c466c36fd365a50f3b73dd0be1fb4",
+      "tracked_changes": "",
+      "projects": 29,
+      "level": 2,
+      "dependencies": [
+        "Broiler.RegEx",
+        "Broiler.Unicode"
+      ]
+    },
+    {
+      "name": "Broiler.JSeal",
+      "commit": "ebb5e6ac0ed8921e224d822e6aa7d26404a3a079",
+      "tracked_changes": "",
+      "projects": 7,
+      "level": 4,
+      "dependencies": [
+        "Broiler.JS",
+        "Broiler.VM"
+      ]
+    },
+    {
+      "name": "Broiler.Layout",
+      "commit": "d7634ba58f1806fc82a83e393a7394edc7ca0028",
+      "tracked_changes": "",
+      "projects": 1,
+      "level": 3,
+      "dependencies": [
+        "Broiler.CSS",
+        "Broiler.DOM",
+        "Broiler.Graphics"
+      ]
+    },
+    {
+      "name": "Broiler.Mail",
+      "commit": "6bc06ae5ff2e0353f799be7fd61a47916267cc00",
+      "tracked_changes": "",
+      "projects": 7,
+      "level": 6,
+      "dependencies": [
+        "Broiler.Graphics",
+        "Broiler.HTML",
+        "Broiler.Hosting",
+        "Broiler.Media",
+        "Broiler.Native",
+        "Broiler.UI"
+      ]
+    },
+    {
+      "name": "Broiler.Media",
+      "commit": "ba0466e2cc9494debac72688ec2c20661e336fbe",
+      "tracked_changes": "",
+      "projects": 9,
+      "level": 1,
+      "dependencies": [
+        "Broiler.Native"
+      ]
+    },
+    {
+      "name": "Broiler.Native",
+      "commit": "05bfffeb1012142ca26e9e32a428a792edde777a",
+      "tracked_changes": "",
+      "projects": 5,
+      "level": 0,
+      "dependencies": []
+    },
+    {
+      "name": "Broiler.Net",
+      "commit": "0f8bd3caa2523a303c6d717485ccdf23ef56e892",
+      "tracked_changes": "",
+      "projects": 1,
+      "level": 0,
+      "dependencies": []
+    },
+    {
+      "name": "Broiler.Plate",
+      "commit": "469f5344c4da3aa33e238b124a3eb6c3381f47e1",
+      "tracked_changes": "",
+      "projects": 2,
+      "level": 6,
+      "dependencies": [
+        "Broiler.Documents",
+        "Broiler.Graphics",
+        "Broiler.Hosting",
+        "Broiler.Input",
+        "Broiler.Media",
+        "Broiler.UI"
+      ]
+    },
+    {
+      "name": "Broiler.RegEx",
+      "commit": "07993420d6780d3a973282e5ec91ad6a51efcb8c",
+      "tracked_changes": "",
+      "projects": 1,
+      "level": 1,
+      "dependencies": [
+        "Broiler.Unicode"
+      ]
+    },
+    {
+      "name": "Broiler.Terminal",
+      "commit": "6baf6749a0808b9c622ee8191b5ac45b29dbce9c",
+      "tracked_changes": "",
+      "projects": 0,
+      "level": 0,
+      "dependencies": []
+    },
+    {
+      "name": "Broiler.UI",
+      "commit": "dd7d4c00daca04cf7022a1db128523d9ae28dea1",
+      "tracked_changes": "",
+      "projects": 66,
+      "level": 4,
+      "dependencies": [
+        "Broiler.Documents",
+        "Broiler.Graphics",
+        "Broiler.Input"
+      ]
+    },
+    {
+      "name": "Broiler.Unicode",
+      "commit": "0faa1f9aaf5091f55e6cfe2ffe7de0693a68ae55",
+      "tracked_changes": "",
+      "projects": 7,
+      "level": 0,
+      "dependencies": []
+    },
+    {
+      "name": "Broiler.VM",
+      "commit": "1f253ff7a6ba67051854c52b6e9a68a3e1f65f31",
+      "tracked_changes": "",
+      "projects": 23,
+      "level": 3,
+      "dependencies": [
+        "Broiler.JS"
+      ]
+    },
+    {
+      "name": "Broiler.Writer",
+      "commit": "08fe637c26de39ea1876927b0ad2a715d86a4c11",
+      "tracked_changes": "",
+      "projects": 6,
+      "level": 6,
+      "dependencies": [
+        "Broiler.Documents",
+        "Broiler.Graphics",
+        "Broiler.Hosting",
+        "Broiler.Input",
+        "Broiler.Media",
+        "Broiler.UI"
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "source": "Broiler.Browser",
+      "target": "Broiler.Hosting",
+      "project": "src/Broiler.Browser.Android/Broiler.Browser.Android.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Hosting.Android",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Browser",
+      "target": "Broiler.CSS",
+      "project": "src/Broiler.Browser.Core/Broiler.Browser.Core.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.CSS.Dom",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Browser",
+      "target": "Broiler.DOM",
+      "project": "src/Broiler.Browser.Core/Broiler.Browser.Core.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Dom.Html",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Browser",
+      "target": "Broiler.Graphics",
+      "project": "src/Broiler.Browser.Core/Broiler.Browser.Core.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Graphics",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Browser",
+      "target": "Broiler.HTML",
+      "project": "src/Broiler.Browser.Core/Broiler.Browser.Core.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.HTML.Graphics",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Browser",
+      "target": "Broiler.HTML",
+      "project": "src/Broiler.Browser.Core/Broiler.Browser.Core.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.HTML.Image",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Browser",
+      "target": "Broiler.HtmlBridge",
+      "project": "src/Broiler.Browser.Core/Broiler.Browser.Core.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.HtmlBridge.Core",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Browser",
+      "target": "Broiler.HtmlBridge",
+      "project": "src/Broiler.Browser.Core/Broiler.Browser.Core.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.HtmlBridge.Dom",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Browser",
+      "target": "Broiler.HtmlBridge",
+      "project": "src/Broiler.Browser.Core/Broiler.Browser.Core.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.HtmlBridge.Scripting",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Browser",
+      "target": "Broiler.HtmlBridge",
+      "project": "src/Broiler.Browser.Core/Broiler.Browser.Core.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.HtmlBridge.Scripting.Vm",
+      "condition": "'$(BroilerJavaScriptEngine)' == 'Vm'"
+    },
+    {
+      "source": "Broiler.Browser",
+      "target": "Broiler.Input",
+      "project": "src/Broiler.Browser.Core/Broiler.Browser.Core.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Input.Keyboard",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Browser",
+      "target": "Broiler.Input",
+      "project": "src/Broiler.Browser.Core/Broiler.Browser.Core.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Input.Mouse",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Browser",
+      "target": "Broiler.Input",
+      "project": "src/Broiler.Browser.Core/Broiler.Browser.Core.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Input.Touch",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Browser",
+      "target": "Broiler.Layout",
+      "project": "src/Broiler.Browser.Core/Broiler.Browser.Core.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Layout",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Browser",
+      "target": "Broiler.Net",
+      "project": "src/Broiler.Browser.Core/Broiler.Browser.Core.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Net",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Browser",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Browser.Core/Broiler.Browser.Core.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.Button.Standard",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Browser",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Browser.Core/Broiler.Browser.Core.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.CheckBox.Standard",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Browser",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Browser.Core/Broiler.Browser.Core.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.Dialog.Standard",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Browser",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Browser.Core/Broiler.Browser.Core.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.FileDialog.Standard",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Browser",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Browser.Core/Broiler.Browser.Core.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.Label.Standard",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Browser",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Browser.Core/Broiler.Browser.Core.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.PrintDialog.Standard",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Browser",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Browser.Core/Broiler.Browser.Core.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.RadioButton.Standard",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Browser",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Browser.Core/Broiler.Browser.Core.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.Window.Standard",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Browser",
+      "target": "Broiler.Documents",
+      "project": "src/Broiler.Browser.Linux/Broiler.Browser.Linux.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Documents.Pdf",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Browser",
+      "target": "Broiler.Graphics",
+      "project": "src/Broiler.Browser.Linux/Broiler.Browser.Linux.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Graphics.Linux",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Browser",
+      "target": "Broiler.Graphics",
+      "project": "src/Broiler.Browser.Linux/Broiler.Browser.Linux.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Graphics.Linux.OpenGL",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Browser",
+      "target": "Broiler.Hosting",
+      "project": "src/Broiler.Browser.Linux/Broiler.Browser.Linux.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Hosting.Linux",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Browser",
+      "target": "Broiler.Input",
+      "project": "src/Broiler.Browser.Linux/Broiler.Browser.Linux.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Input.Keyboard.Linux",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Browser",
+      "target": "Broiler.Input",
+      "project": "src/Broiler.Browser.Linux/Broiler.Browser.Linux.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Input.Linux",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Browser",
+      "target": "Broiler.Input",
+      "project": "src/Broiler.Browser.Linux/Broiler.Browser.Linux.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Input.Mouse.Linux",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Browser",
+      "target": "Broiler.Graphics",
+      "project": "src/Broiler.Browser.Windows/Broiler.Browser.Windows.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Graphics.Windows",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Browser",
+      "target": "Broiler.Hosting",
+      "project": "src/Broiler.Browser.Windows/Broiler.Browser.Windows.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Hosting.Windows",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Browser",
+      "target": "Broiler.Input",
+      "project": "src/Broiler.Browser.Windows/Broiler.Browser.Windows.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Input.Keyboard.Windows",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Browser",
+      "target": "Broiler.Input",
+      "project": "src/Broiler.Browser.Windows/Broiler.Browser.Windows.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Input.Mouse.Windows",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.CSS",
+      "target": "Broiler.DOM",
+      "project": "Broiler.CSS.Dom/Broiler.CSS.Dom.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Dom",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Code",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Code.Core/Broiler.Code.Core.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.Button",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Code",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Code.Core/Broiler.Code.Core.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.CodeEditor",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Code",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Code.Core/Broiler.Code.Core.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.ComboBox",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Code",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Code.Core/Broiler.Code.Core.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.Edit",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Code",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Code.Core/Broiler.Code.Core.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.Label",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Code",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Code.Core/Broiler.Code.Core.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.Menu",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Code",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Code.Core/Broiler.Code.Core.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.Panel",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Code",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Code.Core/Broiler.Code.Core.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.Splitter",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Code",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Code.Core/Broiler.Code.Core.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.TabView",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Code",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Code.Core/Broiler.Code.Core.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.Toolbar",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Code",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Code.Core/Broiler.Code.Core.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.TreeView",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Code",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Code.Language.CSharp.Roslyn/Broiler.Code.Language.CSharp.Roslyn.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.CodeEditor",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Code",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Code.Language.CSharp.Syntax/Broiler.Code.Language.CSharp.Syntax.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.CodeEditor",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Code",
+      "target": "Broiler.Graphics",
+      "project": "src/Broiler.Code.Linux/Broiler.Code.Linux.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Graphics.Linux.OpenGL",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Code",
+      "target": "Broiler.Hosting",
+      "project": "src/Broiler.Code.Linux/Broiler.Code.Linux.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Hosting.Linux",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Code",
+      "target": "Broiler.Input",
+      "project": "src/Broiler.Code.Linux/Broiler.Code.Linux.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Input.Keyboard.Linux",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Code",
+      "target": "Broiler.Input",
+      "project": "src/Broiler.Code.Linux/Broiler.Code.Linux.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Input.Mouse.Linux",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Code",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Code.Linux/Broiler.Code.Linux.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.Button.Standard",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Code",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Code.Linux/Broiler.Code.Linux.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.CodeEditor.Standard",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Code",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Code.Linux/Broiler.Code.Linux.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.ComboBox.Standard",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Code",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Code.Linux/Broiler.Code.Linux.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.Edit.Standard",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Code",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Code.Linux/Broiler.Code.Linux.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.Label.Standard",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Code",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Code.Linux/Broiler.Code.Linux.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.Menu.Standard",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Code",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Code.Linux/Broiler.Code.Linux.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.Panel.Standard",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Code",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Code.Linux/Broiler.Code.Linux.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.Splitter.Standard",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Code",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Code.Linux/Broiler.Code.Linux.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.TabView.Standard",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Code",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Code.Linux/Broiler.Code.Linux.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.Toolbar.Standard",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Code",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Code.Linux/Broiler.Code.Linux.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.TreeView.Standard",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Code",
+      "target": "Broiler.Graphics",
+      "project": "src/Broiler.Code.Windows/Broiler.Code.Windows.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Graphics.Windows",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Code",
+      "target": "Broiler.Hosting",
+      "project": "src/Broiler.Code.Windows/Broiler.Code.Windows.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Hosting.Windows",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Code",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Code.Windows/Broiler.Code.Windows.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.Button.Standard",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Code",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Code.Windows/Broiler.Code.Windows.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.CodeEditor.Standard",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Code",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Code.Windows/Broiler.Code.Windows.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.ComboBox.Standard",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Code",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Code.Windows/Broiler.Code.Windows.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.Edit.Standard",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Code",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Code.Windows/Broiler.Code.Windows.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.Label.Standard",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Code",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Code.Windows/Broiler.Code.Windows.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.Menu.Standard",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Code",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Code.Windows/Broiler.Code.Windows.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.Panel.Standard",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Code",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Code.Windows/Broiler.Code.Windows.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.Splitter.Standard",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Code",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Code.Windows/Broiler.Code.Windows.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.TabView.Standard",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Code",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Code.Windows/Broiler.Code.Windows.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.Toolbar.Standard",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Code",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Code.Windows/Broiler.Code.Windows.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.TreeView.Standard",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Documents",
+      "target": "Broiler.Graphics",
+      "project": "src/Broiler.Documents.Cli/Broiler.Documents.Cli.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Graphics",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Documents",
+      "target": "Broiler.Media",
+      "project": "src/Broiler.Documents.Cli/Broiler.Documents.Cli.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Media.Image.Managed",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Documents",
+      "target": "Broiler.DOM",
+      "project": "src/Broiler.Documents.Html/Broiler.Documents.Html.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Dom",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Documents",
+      "target": "Broiler.DOM",
+      "project": "src/Broiler.Documents.Html/Broiler.Documents.Html.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Dom.Html",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Documents",
+      "target": "Broiler.Graphics",
+      "project": "src/Broiler.Documents.Model/Broiler.Documents.Model.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Graphics",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Documents",
+      "target": "Broiler.Graphics",
+      "project": "src/Broiler.Documents.Pagination/Broiler.Documents.Pagination.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Graphics",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Documents",
+      "target": "Broiler.Graphics",
+      "project": "src/Broiler.Documents.Pdf.Fonts/Broiler.Documents.Pdf.Fonts.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Graphics",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Documents",
+      "target": "Broiler.Media",
+      "project": "src/Broiler.Documents.Pdf.Images/Broiler.Documents.Pdf.Images.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Media.Image.Managed",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Graphics",
+      "target": "Broiler.Native",
+      "project": "src/Broiler.Graphics.Android/Broiler.Graphics.Android.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Native.Android",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Graphics",
+      "target": "Broiler.Native",
+      "project": "src/Broiler.Graphics.Linux/Broiler.Graphics.Linux.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Native.Linux",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Graphics",
+      "target": "Broiler.Media",
+      "project": "src/Broiler.Graphics.Windows/Broiler.Graphics.Direct2D.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Media.Video",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Graphics",
+      "target": "Broiler.Media",
+      "project": "src/Broiler.Graphics.Windows/Broiler.Graphics.Direct2D.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Media.Video.Windows",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Graphics",
+      "target": "Broiler.Native",
+      "project": "src/Broiler.Graphics.Windows/Broiler.Graphics.Direct2D.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Native.Windows",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Graphics",
+      "target": "Broiler.Media",
+      "project": "src/Broiler.Graphics/Broiler.Graphics.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Media.Image",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.HTML",
+      "target": "Broiler.CSS",
+      "project": "Source/Broiler.HTML.Core/Broiler.HTML.Core.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.CSS",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.HTML",
+      "target": "Broiler.Graphics",
+      "project": "Source/Broiler.HTML.Core/Broiler.HTML.Core.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Graphics",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.HTML",
+      "target": "Broiler.Layout",
+      "project": "Source/Broiler.HTML.Core/Broiler.HTML.Core.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Layout",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.HTML",
+      "target": "Broiler.Net",
+      "project": "Source/Broiler.HTML.Core/Broiler.HTML.Core.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Net",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.HTML",
+      "target": "Broiler.DOM",
+      "project": "Source/Broiler.HTML.Dom/Broiler.HTML.Dom.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Dom.Html",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.HTML",
+      "target": "Broiler.Media",
+      "project": "Source/Broiler.HTML.Graphics/Broiler.HTML.Graphics.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Media.Image.Managed",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.HTML",
+      "target": "Broiler.Media",
+      "project": "Source/Broiler.HTML.Image/Broiler.HTML.Image.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Media.Image.Managed",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.HTML",
+      "target": "Broiler.CSS",
+      "project": "Source/Broiler.HTML.Orchestration/Broiler.HTML.Orchestration.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.CSS.Dom",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Hosting",
+      "target": "Broiler.Graphics",
+      "project": "src/Broiler.Hosting.Android/Broiler.Hosting.Android.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Graphics",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Hosting",
+      "target": "Broiler.Input",
+      "project": "src/Broiler.Hosting.Android/Broiler.Hosting.Android.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Input.Android",
+      "condition": "$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'"
+    },
+    {
+      "source": "Broiler.Hosting",
+      "target": "Broiler.Input",
+      "project": "src/Broiler.Hosting.Android/Broiler.Hosting.Android.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Input.Keyboard.Android",
+      "condition": "$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'"
+    },
+    {
+      "source": "Broiler.Hosting",
+      "target": "Broiler.Input",
+      "project": "src/Broiler.Hosting.Android/Broiler.Hosting.Android.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Input.Pen.Android",
+      "condition": "$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'"
+    },
+    {
+      "source": "Broiler.Hosting",
+      "target": "Broiler.Input",
+      "project": "src/Broiler.Hosting.Android/Broiler.Hosting.Android.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Input.Text.Android",
+      "condition": "$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'"
+    },
+    {
+      "source": "Broiler.Hosting",
+      "target": "Broiler.Input",
+      "project": "src/Broiler.Hosting.Android/Broiler.Hosting.Android.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Input.Touch.Android",
+      "condition": "$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'"
+    },
+    {
+      "source": "Broiler.Hosting",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Hosting.Android/Broiler.Hosting.Android.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Hosting",
+      "target": "Broiler.Graphics",
+      "project": "src/Broiler.Hosting.Linux/Broiler.Hosting.Linux.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Graphics",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Hosting",
+      "target": "Broiler.Graphics",
+      "project": "src/Broiler.Hosting.Linux/Broiler.Hosting.Linux.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Graphics.Linux",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Hosting",
+      "target": "Broiler.Graphics",
+      "project": "src/Broiler.Hosting.Linux/Broiler.Hosting.Linux.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Graphics.Linux.OpenGL",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Hosting",
+      "target": "Broiler.Input",
+      "project": "src/Broiler.Hosting.Linux/Broiler.Hosting.Linux.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Input",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Hosting",
+      "target": "Broiler.Input",
+      "project": "src/Broiler.Hosting.Linux/Broiler.Hosting.Linux.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Input.Keyboard",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Hosting",
+      "target": "Broiler.Input",
+      "project": "src/Broiler.Hosting.Linux/Broiler.Hosting.Linux.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Input.Keyboard.Linux",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Hosting",
+      "target": "Broiler.Input",
+      "project": "src/Broiler.Hosting.Linux/Broiler.Hosting.Linux.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Input.Linux",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Hosting",
+      "target": "Broiler.Input",
+      "project": "src/Broiler.Hosting.Linux/Broiler.Hosting.Linux.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Input.Mouse",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Hosting",
+      "target": "Broiler.Input",
+      "project": "src/Broiler.Hosting.Linux/Broiler.Hosting.Linux.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Input.Mouse.Linux",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Hosting",
+      "target": "Broiler.Native",
+      "project": "src/Broiler.Hosting.Linux/Broiler.Hosting.Linux.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Native",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Hosting",
+      "target": "Broiler.Native",
+      "project": "src/Broiler.Hosting.Linux/Broiler.Hosting.Linux.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Native.Linux",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Hosting",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Hosting.Linux/Broiler.Hosting.Linux.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Hosting",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Hosting.Linux/Broiler.Hosting.Linux.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.Standard",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Hosting",
+      "target": "Broiler.Graphics",
+      "project": "src/Broiler.Hosting.Windows/Broiler.Hosting.Windows.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Graphics",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Hosting",
+      "target": "Broiler.Graphics",
+      "project": "src/Broiler.Hosting.Windows/Broiler.Hosting.Windows.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Graphics.Windows",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Hosting",
+      "target": "Broiler.Input",
+      "project": "src/Broiler.Hosting.Windows/Broiler.Hosting.Windows.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Input",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Hosting",
+      "target": "Broiler.Input",
+      "project": "src/Broiler.Hosting.Windows/Broiler.Hosting.Windows.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Input.Keyboard",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Hosting",
+      "target": "Broiler.Native",
+      "project": "src/Broiler.Hosting.Windows/Broiler.Hosting.Windows.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Native.Windows",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Hosting",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Hosting.Windows/Broiler.Hosting.Windows.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Hosting",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Hosting.Windows/Broiler.Hosting.Windows.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.Button",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Hosting",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Hosting.Windows/Broiler.Hosting.Windows.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.ComboBox",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Hosting",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Hosting.Windows/Broiler.Hosting.Windows.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.Edit",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Hosting",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Hosting.Windows/Broiler.Hosting.Windows.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.ListView",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Hosting",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Hosting.Windows/Broiler.Hosting.Windows.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.ListView.Standard",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Hosting",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Hosting.Windows/Broiler.Hosting.Windows.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.RichEdit",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Hosting",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Hosting.Windows/Broiler.Hosting.Windows.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.Standard",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Hosting",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Hosting.Windows/Broiler.Hosting.Windows.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.TabView",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Hosting",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Hosting.Windows/Broiler.Hosting.Windows.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.TabView.Standard",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Hosting",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Hosting.Windows/Broiler.Hosting.Windows.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.TreeView",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Hosting",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Hosting.Windows/Broiler.Hosting.Windows.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.TreeView.Standard",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.HtmlBridge",
+      "target": "Broiler.CSS",
+      "project": "src/Broiler.HtmlBridge.Core/Broiler.HtmlBridge.Core.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.CSS.Dom",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.HtmlBridge",
+      "target": "Broiler.DOM",
+      "project": "src/Broiler.HtmlBridge.Core/Broiler.HtmlBridge.Core.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Dom.Html",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.HtmlBridge",
+      "target": "Broiler.JS",
+      "project": "src/Broiler.HtmlBridge.Core/Broiler.HtmlBridge.Core.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.JavaScript.Engine",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.HtmlBridge",
+      "target": "Broiler.Layout",
+      "project": "src/Broiler.HtmlBridge.Core/Broiler.HtmlBridge.Core.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Layout",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.HtmlBridge",
+      "target": "Broiler.Net",
+      "project": "src/Broiler.HtmlBridge.Core/Broiler.HtmlBridge.Core.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Net",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.HtmlBridge",
+      "target": "Broiler.JSeal",
+      "project": "src/Broiler.HtmlBridge.Dom/Broiler.HtmlBridge.Dom.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.JSeal",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.HtmlBridge",
+      "target": "Broiler.JS",
+      "project": "src/Broiler.HtmlBridge.Dom/Broiler.HtmlBridge.Dom.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.JavaScript.Modules",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.HtmlBridge",
+      "target": "Broiler.JSeal",
+      "project": "src/Broiler.HtmlBridge.DomBridgeUtils/Broiler.HtmlBridge.DomBridgeUtils.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.JSeal",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.HtmlBridge",
+      "target": "Broiler.JSeal",
+      "project": "src/Broiler.HtmlBridge.Scripting.Vm/Broiler.HtmlBridge.Scripting.Vm.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.JSeal.Vm",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.HtmlBridge",
+      "target": "Broiler.JSeal",
+      "project": "src/Broiler.HtmlBridge.Scripting/Broiler.HtmlBridge.Scripting.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.JSeal.BroilerJs",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Input",
+      "target": "Broiler.Media",
+      "project": "src/Broiler.Input.Camera.Windows/Broiler.Input.Camera.Windows.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Media.Video.MediaFoundation",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Input",
+      "target": "Broiler.Media",
+      "project": "src/Broiler.Input.Camera.Windows/Broiler.Input.Camera.Windows.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Media.Video.Windows",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Input",
+      "target": "Broiler.Native",
+      "project": "src/Broiler.Input.Keyboard.Windows/Broiler.Input.Keyboard.Windows.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Native.Windows",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Input",
+      "target": "Broiler.Native",
+      "project": "src/Broiler.Input.Linux/Broiler.Input.Linux.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Native.Linux",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Input",
+      "target": "Broiler.Native",
+      "project": "src/Broiler.Input.Microphone.Windows/Broiler.Input.Microphone.Windows.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Native.Windows",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Input",
+      "target": "Broiler.Native",
+      "project": "src/Broiler.Input.Windows/Broiler.Input.Windows.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Native.Windows",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.JS",
+      "target": "Broiler.RegEx",
+      "project": "Broiler.JS/Broiler.JavaScript.BuiltIns/Broiler.JavaScript.BuiltIns.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Regex",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.JS",
+      "target": "Broiler.Unicode",
+      "project": "Broiler.JS/Broiler.JavaScript.BuiltIns/Broiler.JavaScript.BuiltIns.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Unicode.Cldr.LocaleData",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.JSeal",
+      "target": "Broiler.JS",
+      "project": "Broiler.JSeal.BroilerJs/Broiler.JSeal.BroilerJs.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.JavaScript.BuiltIns",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.JSeal",
+      "target": "Broiler.JS",
+      "project": "Broiler.JSeal.BroilerJs/Broiler.JSeal.BroilerJs.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.JavaScript.Globals",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.JSeal",
+      "target": "Broiler.JS",
+      "project": "Broiler.JSeal.BroilerJs/Broiler.JSeal.BroilerJs.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.JavaScript.Modules",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.JSeal",
+      "target": "Broiler.JS",
+      "project": "Broiler.JSeal.BroilerJs/Broiler.JSeal.BroilerJs.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.JavaScript.Storage",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.JSeal",
+      "target": "Broiler.VM",
+      "project": "Broiler.JSeal.Vm/Broiler.JSeal.Vm.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.VM.Profile.JavaScript",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.JSeal",
+      "target": "Broiler.VM",
+      "project": "Broiler.JSeal.Vm/Broiler.JSeal.Vm.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.VM.Profile.JavaScript.Compiler",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.JSeal",
+      "target": "Broiler.VM",
+      "project": "Broiler.JSeal.Vm/Broiler.JSeal.Vm.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.VM.Runtime",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Layout",
+      "target": "Broiler.CSS",
+      "project": "Broiler.Layout/Broiler.Layout.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.CSS",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Layout",
+      "target": "Broiler.CSS",
+      "project": "Broiler.Layout/Broiler.Layout.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.CSS.Dom",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Layout",
+      "target": "Broiler.DOM",
+      "project": "Broiler.Layout/Broiler.Layout.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Dom",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Layout",
+      "target": "Broiler.Graphics",
+      "project": "Broiler.Layout/Broiler.Layout.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Graphics",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Mail",
+      "target": "Broiler.Hosting",
+      "project": "src/Broiler.Mail.Android/Broiler.Mail.Android.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Hosting.Android",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Mail",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Mail.Application/Broiler.Mail.Application.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.Button.Standard",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Mail",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Mail.Application/Broiler.Mail.Application.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.ComboBox.Standard",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Mail",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Mail.Application/Broiler.Mail.Application.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.Dialog.Standard",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Mail",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Mail.Application/Broiler.Mail.Application.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.Edit.Standard",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Mail",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Mail.Application/Broiler.Mail.Application.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.Forms.Standard",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Mail",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Mail.Application/Broiler.Mail.Application.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.Label.Standard",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Mail",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Mail.Application/Broiler.Mail.Application.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.ListView.Standard",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Mail",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Mail.Application/Broiler.Mail.Application.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.Menu.Standard",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Mail",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Mail.Application/Broiler.Mail.Application.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.Panel.Standard",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Mail",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Mail.Application/Broiler.Mail.Application.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.RichEdit.Standard",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Mail",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Mail.Application/Broiler.Mail.Application.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.ScrollView.Standard",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Mail",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Mail.Application/Broiler.Mail.Application.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.Splitter.Standard",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Mail",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Mail.Application/Broiler.Mail.Application.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.TabView.Standard",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Mail",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Mail.Application/Broiler.Mail.Application.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.Toolbar.Standard",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Mail",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Mail.Application/Broiler.Mail.Application.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.Window.Standard",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Mail",
+      "target": "Broiler.Hosting",
+      "project": "src/Broiler.Mail.Cli/Broiler.Mail.Cli.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Hosting.Linux",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Mail",
+      "target": "Broiler.Graphics",
+      "project": "src/Broiler.Mail.Linux/Broiler.Mail.Linux.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Graphics.Linux.OpenGL",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Mail",
+      "target": "Broiler.Hosting",
+      "project": "src/Broiler.Mail.Linux/Broiler.Mail.Linux.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Hosting.Linux",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Mail",
+      "target": "Broiler.Graphics",
+      "project": "src/Broiler.Mail.Windows/Broiler.Mail.Windows.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Graphics.Windows",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Mail",
+      "target": "Broiler.HTML",
+      "project": "src/Broiler.Mail.Windows/Broiler.Mail.Windows.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.HTML.Core",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Mail",
+      "target": "Broiler.HTML",
+      "project": "src/Broiler.Mail.Windows/Broiler.Mail.Windows.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.HTML.Image",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Mail",
+      "target": "Broiler.HTML",
+      "project": "src/Broiler.Mail.Windows/Broiler.Mail.Windows.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.HTML.Image.Compat",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Mail",
+      "target": "Broiler.Hosting",
+      "project": "src/Broiler.Mail.Windows/Broiler.Mail.Windows.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Hosting.Windows",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Mail",
+      "target": "Broiler.Media",
+      "project": "src/Broiler.Mail.Windows/Broiler.Mail.Windows.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Media.Image.Managed",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Mail",
+      "target": "Broiler.Native",
+      "project": "src/Broiler.Mail.Windows/Broiler.Mail.Windows.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Native.Windows",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Media",
+      "target": "Broiler.Native",
+      "project": "src/Broiler.Media.Image.Managed/Broiler.Media.Image.Managed.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Native.Windows",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Media",
+      "target": "Broiler.Native",
+      "project": "src/Broiler.Media.Video.MediaFoundation/Broiler.Media.Video.MediaFoundation.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Native.Windows",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Plate",
+      "target": "Broiler.Documents",
+      "project": "src/Broiler.Plate.Windows/Broiler.Plate.Windows.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Documents.Pdf",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Plate",
+      "target": "Broiler.Documents",
+      "project": "src/Broiler.Plate.Windows/Broiler.Plate.Windows.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Documents.Pdf.Images",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Plate",
+      "target": "Broiler.Graphics",
+      "project": "src/Broiler.Plate.Windows/Broiler.Plate.Windows.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Graphics",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Plate",
+      "target": "Broiler.Graphics",
+      "project": "src/Broiler.Plate.Windows/Broiler.Plate.Windows.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Graphics.Windows",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Plate",
+      "target": "Broiler.Hosting",
+      "project": "src/Broiler.Plate.Windows/Broiler.Plate.Windows.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Hosting.Windows",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Plate",
+      "target": "Broiler.Media",
+      "project": "src/Broiler.Plate.Windows/Broiler.Plate.Windows.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Media.Image.Managed",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Plate",
+      "target": "Broiler.Documents",
+      "project": "src/Broiler.Plate/Broiler.Plate.Core.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Documents.Docx",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Plate",
+      "target": "Broiler.Documents",
+      "project": "src/Broiler.Plate/Broiler.Plate.Core.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Documents.Html",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Plate",
+      "target": "Broiler.Documents",
+      "project": "src/Broiler.Plate/Broiler.Plate.Core.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Documents.Markdown",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Plate",
+      "target": "Broiler.Documents",
+      "project": "src/Broiler.Plate/Broiler.Plate.Core.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Documents.Model",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Plate",
+      "target": "Broiler.Documents",
+      "project": "src/Broiler.Plate/Broiler.Plate.Core.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Documents.Pagination",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Plate",
+      "target": "Broiler.Documents",
+      "project": "src/Broiler.Plate/Broiler.Plate.Core.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Documents.Rtf",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Plate",
+      "target": "Broiler.Graphics",
+      "project": "src/Broiler.Plate/Broiler.Plate.Core.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Graphics",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Plate",
+      "target": "Broiler.Input",
+      "project": "src/Broiler.Plate/Broiler.Plate.Core.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Input.Keyboard",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Plate",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Plate/Broiler.Plate.Core.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.AboutDialog",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Plate",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Plate/Broiler.Plate.Core.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.AboutDialog.Standard",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Plate",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Plate/Broiler.Plate.Core.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.Dialog.Standard",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Plate",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Plate/Broiler.Plate.Core.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.FileDialog.Standard",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Plate",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Plate/Broiler.Plate.Core.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.ImageView.Standard",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Plate",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Plate/Broiler.Plate.Core.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.Label.Standard",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Plate",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Plate/Broiler.Plate.Core.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.Menu.Standard",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Plate",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Plate/Broiler.Plate.Core.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.PrintDialog.Standard",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Plate",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Plate/Broiler.Plate.Core.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.RichEdit.Standard",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Plate",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Plate/Broiler.Plate.Core.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.Toolbar.Standard",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Plate",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Plate/Broiler.Plate.Core.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.Window.Standard",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.RegEx",
+      "target": "Broiler.Unicode",
+      "project": "Broiler.Regex/Broiler.Regex.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UniCode.Emoji.StringProperties",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.RegEx",
+      "target": "Broiler.Unicode",
+      "project": "Broiler.Regex/Broiler.Regex.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UniCode.Properties",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.UI",
+      "target": "Broiler.Graphics",
+      "project": "src/Abstractions/Commands/Broiler.UI.Button/Broiler.UI.Button.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Graphics",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.UI",
+      "target": "Broiler.Graphics",
+      "project": "src/Abstractions/Commands/Broiler.UI.Menu/Broiler.UI.Menu.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Graphics",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.UI",
+      "target": "Broiler.Graphics",
+      "project": "src/Abstractions/Commands/Broiler.UI.ToggleButton/Broiler.UI.ToggleButton.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Graphics",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.UI",
+      "target": "Broiler.Graphics",
+      "project": "src/Abstractions/Commands/Broiler.UI.Toolbar/Broiler.UI.Toolbar.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Graphics",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.UI",
+      "target": "Broiler.Graphics",
+      "project": "src/Abstractions/Content/Broiler.UI.ImageView/Broiler.UI.ImageView.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Graphics",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.UI",
+      "target": "Broiler.Graphics",
+      "project": "src/Abstractions/Content/Broiler.UI.Label/Broiler.UI.Label.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Graphics",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.UI",
+      "target": "Broiler.Graphics",
+      "project": "src/Abstractions/Content/Broiler.UI.PrintPreview/Broiler.UI.PrintPreview.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Graphics",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.UI",
+      "target": "Broiler.Graphics",
+      "project": "src/Abstractions/Content/Broiler.UI.ProgressBar/Broiler.UI.ProgressBar.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Graphics",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.UI",
+      "target": "Broiler.Graphics",
+      "project": "src/Abstractions/Layout/Broiler.UI.Forms/Broiler.UI.Forms.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Graphics",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.UI",
+      "target": "Broiler.Graphics",
+      "project": "src/Abstractions/Layout/Broiler.UI.Panel/Broiler.UI.Panel.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Graphics",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.UI",
+      "target": "Broiler.Graphics",
+      "project": "src/Abstractions/Layout/Broiler.UI.ScrollView/Broiler.UI.ScrollView.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Graphics",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.UI",
+      "target": "Broiler.Graphics",
+      "project": "src/Abstractions/Layout/Broiler.UI.Splitter/Broiler.UI.Splitter.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Graphics",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.UI",
+      "target": "Broiler.Graphics",
+      "project": "src/Abstractions/Layout/Broiler.UI.TabView/Broiler.UI.TabView.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Graphics",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.UI",
+      "target": "Broiler.Graphics",
+      "project": "src/Abstractions/Shell/Broiler.UI.AboutDialog/Broiler.UI.AboutDialog.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Graphics",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.UI",
+      "target": "Broiler.Graphics",
+      "project": "src/Abstractions/Shell/Broiler.UI.Dialog/Broiler.UI.Dialog.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Graphics",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.UI",
+      "target": "Broiler.Graphics",
+      "project": "src/Abstractions/Shell/Broiler.UI.FileDialog/Broiler.UI.FileDialog.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Graphics",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.UI",
+      "target": "Broiler.Graphics",
+      "project": "src/Abstractions/Shell/Broiler.UI.FontDialog/Broiler.UI.FontDialog.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Graphics",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.UI",
+      "target": "Broiler.Graphics",
+      "project": "src/Abstractions/Shell/Broiler.UI.PrintDialog/Broiler.UI.PrintDialog.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Graphics",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.UI",
+      "target": "Broiler.Graphics",
+      "project": "src/Abstractions/Shell/Broiler.UI.Tooltip/Broiler.UI.Tooltip.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Graphics",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.UI",
+      "target": "Broiler.Graphics",
+      "project": "src/Abstractions/Shell/Broiler.UI.Window/Broiler.UI.Window.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Graphics",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.UI",
+      "target": "Broiler.Graphics",
+      "project": "src/Abstractions/Text/Broiler.UI.CodeEditor/Broiler.UI.CodeEditor.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Graphics",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.UI",
+      "target": "Broiler.Graphics",
+      "project": "src/Abstractions/Text/Broiler.UI.Edit/Broiler.UI.Edit.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Graphics",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.UI",
+      "target": "Broiler.Documents",
+      "project": "src/Abstractions/Text/Broiler.UI.FormatCodeView/Broiler.UI.FormatCodeView.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Documents.FormatCodes",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.UI",
+      "target": "Broiler.Graphics",
+      "project": "src/Abstractions/Text/Broiler.UI.FormatCodeView/Broiler.UI.FormatCodeView.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Graphics",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.UI",
+      "target": "Broiler.Documents",
+      "project": "src/Abstractions/Text/Broiler.UI.RichEdit/Broiler.UI.RichEdit.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Documents.Model",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.UI",
+      "target": "Broiler.Graphics",
+      "project": "src/Abstractions/Text/Broiler.UI.RichEdit/Broiler.UI.RichEdit.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Graphics",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.UI",
+      "target": "Broiler.Graphics",
+      "project": "src/Abstractions/ValueAndSelection/Broiler.UI.CheckBox/Broiler.UI.CheckBox.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Graphics",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.UI",
+      "target": "Broiler.Graphics",
+      "project": "src/Abstractions/ValueAndSelection/Broiler.UI.ComboBox/Broiler.UI.ComboBox.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Graphics",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.UI",
+      "target": "Broiler.Graphics",
+      "project": "src/Abstractions/ValueAndSelection/Broiler.UI.ListView/Broiler.UI.ListView.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Graphics",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.UI",
+      "target": "Broiler.Graphics",
+      "project": "src/Abstractions/ValueAndSelection/Broiler.UI.RadioButton/Broiler.UI.RadioButton.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Graphics",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.UI",
+      "target": "Broiler.Graphics",
+      "project": "src/Abstractions/ValueAndSelection/Broiler.UI.Slider/Broiler.UI.Slider.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Graphics",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.UI",
+      "target": "Broiler.Graphics",
+      "project": "src/Abstractions/ValueAndSelection/Broiler.UI.SpinBox/Broiler.UI.SpinBox.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Graphics",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.UI",
+      "target": "Broiler.Graphics",
+      "project": "src/Abstractions/ValueAndSelection/Broiler.UI.TreeView/Broiler.UI.TreeView.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Graphics",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.UI",
+      "target": "Broiler.Graphics",
+      "project": "src/Foundation/Broiler.UI.Standard/Broiler.UI.Standard.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Graphics",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.UI",
+      "target": "Broiler.Graphics",
+      "project": "src/Foundation/Broiler.UI/Broiler.UI.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Graphics",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.UI",
+      "target": "Broiler.Input",
+      "project": "src/Foundation/Broiler.UI/Broiler.UI.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Input",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.UI",
+      "target": "Broiler.Input",
+      "project": "src/Foundation/Broiler.UI/Broiler.UI.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Input.Keyboard",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.UI",
+      "target": "Broiler.Input",
+      "project": "src/Foundation/Broiler.UI/Broiler.UI.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Input.Mouse",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.UI",
+      "target": "Broiler.Input",
+      "project": "src/Foundation/Broiler.UI/Broiler.UI.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Input.Pen",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.UI",
+      "target": "Broiler.Input",
+      "project": "src/Foundation/Broiler.UI/Broiler.UI.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Input.Text",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.UI",
+      "target": "Broiler.Input",
+      "project": "src/Foundation/Broiler.UI/Broiler.UI.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Input.Touch",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.UI",
+      "target": "Broiler.Graphics",
+      "project": "src/Implementations/Standard/Commands/Broiler.UI.Button.Standard/Broiler.UI.Button.Standard.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Graphics",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.UI",
+      "target": "Broiler.Graphics",
+      "project": "src/Implementations/Standard/Commands/Broiler.UI.Menu.Standard/Broiler.UI.Menu.Standard.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Graphics",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.UI",
+      "target": "Broiler.Graphics",
+      "project": "src/Implementations/Standard/Commands/Broiler.UI.ToggleButton.Standard/Broiler.UI.ToggleButton.Standard.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Graphics",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.UI",
+      "target": "Broiler.Graphics",
+      "project": "src/Implementations/Standard/Commands/Broiler.UI.Toolbar.Standard/Broiler.UI.Toolbar.Standard.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Graphics",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.UI",
+      "target": "Broiler.Graphics",
+      "project": "src/Implementations/Standard/Content/Broiler.UI.ImageView.Standard/Broiler.UI.ImageView.Standard.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Graphics",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.UI",
+      "target": "Broiler.Graphics",
+      "project": "src/Implementations/Standard/Content/Broiler.UI.Label.Standard/Broiler.UI.Label.Standard.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Graphics",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.UI",
+      "target": "Broiler.Graphics",
+      "project": "src/Implementations/Standard/Content/Broiler.UI.PrintPreview.Standard/Broiler.UI.PrintPreview.Standard.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Graphics",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.UI",
+      "target": "Broiler.Graphics",
+      "project": "src/Implementations/Standard/Content/Broiler.UI.ProgressBar.Standard/Broiler.UI.ProgressBar.Standard.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Graphics",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.UI",
+      "target": "Broiler.Graphics",
+      "project": "src/Implementations/Standard/Layout/Broiler.UI.Panel.Standard/Broiler.UI.Panel.Standard.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Graphics",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.UI",
+      "target": "Broiler.Graphics",
+      "project": "src/Implementations/Standard/Layout/Broiler.UI.ScrollView.Standard/Broiler.UI.ScrollView.Standard.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Graphics",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.UI",
+      "target": "Broiler.Graphics",
+      "project": "src/Implementations/Standard/Layout/Broiler.UI.Splitter.Standard/Broiler.UI.Splitter.Standard.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Graphics",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.UI",
+      "target": "Broiler.Graphics",
+      "project": "src/Implementations/Standard/Layout/Broiler.UI.TabView.Standard/Broiler.UI.TabView.Standard.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Graphics",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.UI",
+      "target": "Broiler.Graphics",
+      "project": "src/Implementations/Standard/Shell/Broiler.UI.AboutDialog.Standard/Broiler.UI.AboutDialog.Standard.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Graphics",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.UI",
+      "target": "Broiler.Graphics",
+      "project": "src/Implementations/Standard/Shell/Broiler.UI.Dialog.Standard/Broiler.UI.Dialog.Standard.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Graphics",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.UI",
+      "target": "Broiler.Graphics",
+      "project": "src/Implementations/Standard/Shell/Broiler.UI.FileDialog.Standard/Broiler.UI.FileDialog.Standard.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Graphics",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.UI",
+      "target": "Broiler.Graphics",
+      "project": "src/Implementations/Standard/Shell/Broiler.UI.FontDialog.Standard/Broiler.UI.FontDialog.Standard.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Graphics",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.UI",
+      "target": "Broiler.Graphics",
+      "project": "src/Implementations/Standard/Shell/Broiler.UI.PrintDialog.Standard/Broiler.UI.PrintDialog.Standard.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Graphics",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.UI",
+      "target": "Broiler.Graphics",
+      "project": "src/Implementations/Standard/Shell/Broiler.UI.Tooltip.Standard/Broiler.UI.Tooltip.Standard.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Graphics",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.UI",
+      "target": "Broiler.Graphics",
+      "project": "src/Implementations/Standard/Shell/Broiler.UI.Window.Standard/Broiler.UI.Window.Standard.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Graphics",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.UI",
+      "target": "Broiler.Graphics",
+      "project": "src/Implementations/Standard/Text/Broiler.UI.CodeEditor.Standard/Broiler.UI.CodeEditor.Standard.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Graphics",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.UI",
+      "target": "Broiler.Graphics",
+      "project": "src/Implementations/Standard/Text/Broiler.UI.Edit.Standard/Broiler.UI.Edit.Standard.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Graphics",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.UI",
+      "target": "Broiler.Graphics",
+      "project": "src/Implementations/Standard/Text/Broiler.UI.FormatCodeView.Standard/Broiler.UI.FormatCodeView.Standard.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Graphics",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.UI",
+      "target": "Broiler.Graphics",
+      "project": "src/Implementations/Standard/Text/Broiler.UI.RichEdit.Standard/Broiler.UI.RichEdit.Standard.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Graphics",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.UI",
+      "target": "Broiler.Graphics",
+      "project": "src/Implementations/Standard/ValueAndSelection/Broiler.UI.CheckBox.Standard/Broiler.UI.CheckBox.Standard.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Graphics",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.UI",
+      "target": "Broiler.Graphics",
+      "project": "src/Implementations/Standard/ValueAndSelection/Broiler.UI.ComboBox.Standard/Broiler.UI.ComboBox.Standard.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Graphics",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.UI",
+      "target": "Broiler.Graphics",
+      "project": "src/Implementations/Standard/ValueAndSelection/Broiler.UI.ListView.Standard/Broiler.UI.ListView.Standard.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Graphics",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.UI",
+      "target": "Broiler.Graphics",
+      "project": "src/Implementations/Standard/ValueAndSelection/Broiler.UI.RadioButton.Standard/Broiler.UI.RadioButton.Standard.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Graphics",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.UI",
+      "target": "Broiler.Graphics",
+      "project": "src/Implementations/Standard/ValueAndSelection/Broiler.UI.Slider.Standard/Broiler.UI.Slider.Standard.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Graphics",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.UI",
+      "target": "Broiler.Graphics",
+      "project": "src/Implementations/Standard/ValueAndSelection/Broiler.UI.SpinBox.Standard/Broiler.UI.SpinBox.Standard.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Graphics",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.UI",
+      "target": "Broiler.Graphics",
+      "project": "src/Implementations/Standard/ValueAndSelection/Broiler.UI.TreeView.Standard/Broiler.UI.TreeView.Standard.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Graphics",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.UI",
+      "target": "Broiler.Documents",
+      "project": "src/Integrations/RichEdit/Broiler.UI.RichEdit.Rtf/Broiler.UI.RichEdit.Rtf.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Documents.Rtf",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.VM",
+      "target": "Broiler.JS",
+      "project": "src/Broiler.VM.Profile.JavaScript.Compiler/Broiler.VM.Profile.JavaScript.Compiler.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.ECMAScript.Algorithms",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.VM",
+      "target": "Broiler.JS",
+      "project": "src/Broiler.VM.Profile.JavaScript/Broiler.VM.Profile.JavaScript.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.ECMAScript.Algorithms",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Writer",
+      "target": "Broiler.Hosting",
+      "project": "src/Broiler.Writer.Android/Broiler.Writer.Android.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Hosting.Android",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Writer",
+      "target": "Broiler.Documents",
+      "project": "src/Broiler.Writer.FormatCodes/Broiler.Writer.FormatCodes.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Documents.FormatCodes",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Writer",
+      "target": "Broiler.Media",
+      "project": "src/Broiler.Writer.FormatCodes/Broiler.Writer.FormatCodes.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Media.Image",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Writer",
+      "target": "Broiler.Documents",
+      "project": "src/Broiler.Writer.Linux/Broiler.Writer.Linux.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Documents.Pdf",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Writer",
+      "target": "Broiler.Documents",
+      "project": "src/Broiler.Writer.Linux/Broiler.Writer.Linux.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Documents.Pdf.Fonts",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Writer",
+      "target": "Broiler.Documents",
+      "project": "src/Broiler.Writer.Linux/Broiler.Writer.Linux.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Documents.Pdf.Images",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Writer",
+      "target": "Broiler.Graphics",
+      "project": "src/Broiler.Writer.Linux/Broiler.Writer.Linux.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Graphics",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Writer",
+      "target": "Broiler.Graphics",
+      "project": "src/Broiler.Writer.Linux/Broiler.Writer.Linux.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Graphics.Linux",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Writer",
+      "target": "Broiler.Graphics",
+      "project": "src/Broiler.Writer.Linux/Broiler.Writer.Linux.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Graphics.Linux.OpenGL",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Writer",
+      "target": "Broiler.Hosting",
+      "project": "src/Broiler.Writer.Linux/Broiler.Writer.Linux.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Hosting.Linux",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Writer",
+      "target": "Broiler.Input",
+      "project": "src/Broiler.Writer.Linux/Broiler.Writer.Linux.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Input.Keyboard.Linux",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Writer",
+      "target": "Broiler.Input",
+      "project": "src/Broiler.Writer.Linux/Broiler.Writer.Linux.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Input.Linux",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Writer",
+      "target": "Broiler.Input",
+      "project": "src/Broiler.Writer.Linux/Broiler.Writer.Linux.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Input.Mouse.Linux",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Writer",
+      "target": "Broiler.Media",
+      "project": "src/Broiler.Writer.Linux/Broiler.Writer.Linux.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Media.Image.Managed",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Writer",
+      "target": "Broiler.Graphics",
+      "project": "src/Broiler.Writer.WebAssembly/Broiler.Writer.WebAssembly.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Graphics.WebAssembly",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Writer",
+      "target": "Broiler.Documents",
+      "project": "src/Broiler.Writer.Windows/Broiler.Writer.Windows.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Documents.Pdf",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Writer",
+      "target": "Broiler.Documents",
+      "project": "src/Broiler.Writer.Windows/Broiler.Writer.Windows.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Documents.Pdf.Fonts",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Writer",
+      "target": "Broiler.Documents",
+      "project": "src/Broiler.Writer.Windows/Broiler.Writer.Windows.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Documents.Pdf.Images",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Writer",
+      "target": "Broiler.Graphics",
+      "project": "src/Broiler.Writer.Windows/Broiler.Writer.Windows.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Graphics",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Writer",
+      "target": "Broiler.Graphics",
+      "project": "src/Broiler.Writer.Windows/Broiler.Writer.Windows.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Graphics.Windows",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Writer",
+      "target": "Broiler.Hosting",
+      "project": "src/Broiler.Writer.Windows/Broiler.Writer.Windows.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Hosting.Windows",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Writer",
+      "target": "Broiler.Media",
+      "project": "src/Broiler.Writer.Windows/Broiler.Writer.Windows.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Media.Image.Managed",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Writer",
+      "target": "Broiler.Documents",
+      "project": "src/Broiler.Writer/Broiler.Writer.Core.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Documents.Docx",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Writer",
+      "target": "Broiler.Documents",
+      "project": "src/Broiler.Writer/Broiler.Writer.Core.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Documents.Html",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Writer",
+      "target": "Broiler.Documents",
+      "project": "src/Broiler.Writer/Broiler.Writer.Core.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Documents.Markdown",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Writer",
+      "target": "Broiler.Documents",
+      "project": "src/Broiler.Writer/Broiler.Writer.Core.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Documents.Odt",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Writer",
+      "target": "Broiler.Documents",
+      "project": "src/Broiler.Writer/Broiler.Writer.Core.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Documents.Pagination",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Writer",
+      "target": "Broiler.Documents",
+      "project": "src/Broiler.Writer/Broiler.Writer.Core.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Documents.Rtf",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Writer",
+      "target": "Broiler.Graphics",
+      "project": "src/Broiler.Writer/Broiler.Writer.Core.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Graphics",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Writer",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Writer/Broiler.Writer.Core.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.AboutDialog",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Writer",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Writer/Broiler.Writer.Core.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.AboutDialog.Standard",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Writer",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Writer/Broiler.Writer.Core.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.Button.Standard",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Writer",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Writer/Broiler.Writer.Core.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.ComboBox.Standard",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Writer",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Writer/Broiler.Writer.Core.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.Dialog.Standard",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Writer",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Writer/Broiler.Writer.Core.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.Edit.Standard",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Writer",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Writer/Broiler.Writer.Core.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.FileDialog.Standard",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Writer",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Writer/Broiler.Writer.Core.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.FontDialog.Standard",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Writer",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Writer/Broiler.Writer.Core.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.FormatCodeView",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Writer",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Writer/Broiler.Writer.Core.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.FormatCodeView.Standard",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Writer",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Writer/Broiler.Writer.Core.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.Label.Standard",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Writer",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Writer/Broiler.Writer.Core.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.Menu.Standard",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Writer",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Writer/Broiler.Writer.Core.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.PrintDialog.Standard",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Writer",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Writer/Broiler.Writer.Core.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.RichEdit",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Writer",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Writer/Broiler.Writer.Core.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.RichEdit.Standard",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Writer",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Writer/Broiler.Writer.Core.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.Splitter.Standard",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Writer",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Writer/Broiler.Writer.Core.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.Toolbar.Standard",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Writer",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Writer/Broiler.Writer.Core.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.Tooltip.Standard",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Writer",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Writer/Broiler.Writer.Core.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.Window.Standard",
+      "condition": ""
+    }
+  ]
+}

@@ -2,118 +2,61 @@
 
 [← Back to Broiler Platform](https://github.com/Broiler-Platform)
 
-Broiler is designed so that the same platform components can power multiple deployment models — desktop, mobile, browser, and self-hosted.
+Updated against the aggregate checkout on **21 October 2026**.
 
----
+## Repository and build model
 
-## Platform Layers
+The [Broiler aggregate](https://github.com/Broiler-Platform/Broiler) pins 26 component repositories as Git submodules. It also owns cross-component integration, validation tools and the Broiler Office Standalone Server (BOSS). Component repositories own their application or library code, solutions, tests and workflows.
 
-Each layer is a set of independently versioned repositories. A component consumes the
-layer beneath it as a NuGet package, never the other way round: the dependency graph is
-acyclic, and it is derived from the `.csproj` files rather than drawn by hand.
+Cross-component product dependencies in the current scan use NuGet package references; projects within a component use project references. The [Component Map](component-map.md) is generated from component-owned tracked product project files and includes optional and conditional references. Its 70 component edges form an acyclic graph. This declaration graph does not establish that every package has been published or that every configuration has passed validation.
 
-```text
-                            Broiler Platform
+## Shared stacks
 
-  APPLICATIONS   Broiler.Browser · Broiler.Writer · Broiler.Code
-                 Broiler.Plate · Broiler.Mail
-                              │
-  PRESENTATION   Broiler.HtmlBridge · Broiler.HTML · Broiler.UI
-                              │
-  SEAM, LAYOUT   Broiler.JSeal · Broiler.Layout · Broiler.Documents
-  & DOCUMENTS                 │
-  ENGINES        Broiler.JS · Broiler.Graphics · Broiler.Input
-  & DEVICES                   │
-  PRIMITIVES     Broiler.CSS · Broiler.RegEx · Broiler.Media
-  & CODECS                    │
-  FOUNDATION     Broiler.DOM · Broiler.Unicode · Broiler.VM
-                 Broiler.Net · Broiler.Native
+```mermaid
+flowchart TD
+    Browser[Browser] --> Bridge[HtmlBridge: DOM and scripting integration]
+    Browser --> HTML[HTML rendering]
+    Mail[Mail HTML preview] --> HTML
+    Bridge --> Seam[JSEAL contracts and providers]
+    Seam --> JS[Broiler.JS provider]
+    Seam --> VM[Broiler.VM provider: in progress and unaccepted]
+    Bridge --> JS
+    HTML --> Layout[CSS / DOM / Layout]
+    Writer[Writer / Plate] --> UI[UI and Documents]
+    Code[Code] --> UI
+    Browser --> UI
+    UI --> Base[Graphics / Input / Media / Native]
+    HTML --> Base
 ```
 
-The per-component wiring, in both directions, is in the
-[Component Map](https://github.com/Broiler-Platform/.github/blob/main/profile/docs/component-map.md).
+This is a conceptual overview; the component map records direct references. The browser and office paths share UI, document and device infrastructure. Writer does not directly reference the HTML renderer or JavaScript engine. Browser also directly consumes Documents, so these are overlapping stacks rather than disjoint ones.
 
-Two properties of this layering are worth stating explicitly, because they are what the
-split into separate repositories buys:
+JSEAL separates engine-neutral contracts from engine providers. `Broiler.JSeal` has no package or project references; `Broiler.JSeal.BroilerJs` and `Broiler.JSeal.Vm` implement its contracts. Browser VM configurations select the optional VM scripting provider, but HtmlBridge's DOM binding still reaches Broiler.JS. Choosing the VM does not remove the existing engine from that closure.
 
-- **The two application stacks are mostly disjoint.** The browser stack reaches down through
-  `Broiler.HtmlBridge` → `Broiler.JSeal` → `Broiler.JS`; the office stack reaches down through
-  `Broiler.UI` → `Broiler.Documents`. They meet only at the shared device and rendering base
-  (`Broiler.Graphics`, `Broiler.Input`, `Broiler.Media`, `Broiler.Native`). Broiler.Writer
-  references neither the HTML renderer nor the JavaScript engine.
-- **Script-engine coupling is isolated in one component.** `Broiler.JSeal` is the only
-  assembly allowed to name both the scripting contract and a concrete engine. That is what
-  lets the DOM bindings reach an engine without depending on which engine it is.
+Broiler.Hosting provides shared operating-system integration, including windowing, clipboard, DPI and theme handling. Native platform bindings live in Broiler.Native; managed engines still rely on operating-system services through these boundaries.
 
-BOSS demonstrates how the same document and UI infrastructure can also be deployed through
-WebAssembly and self-hosted using ASP.NET Core.
-
-The Writer's two desktop heads and the Plate Windows head are published ahead of time as self-contained native binaries — see [Native Compilation](https://github.com/Broiler-Platform/.github/blob/main/profile/docs/native-compilation.md) for what that means for the architecture, and for the difference between WebAssembly as a deployment target and WebAssembly as a planned bytecode profile.
-
----
-
-## Desktop, Mobile and Web
-
-An application is a thin head over the shared platform, and each head is its own project.
-Which heads exist today:
+## Application heads
 
 | Application | Windows | Linux | Android | WebAssembly |
-|---|:-:|:-:|:-:|:-:|
-| **Broiler Browser** | ✅ | ✅ | ✅ | — |
-| **Broiler Writer** | ✅ | ✅ | ✅ | ✅ *(via BOSS)* |
-| **Broiler Code** | ✅ | ✅ | — | — |
-| **Broiler Plate** | ✅ | — | — | — |
-| **Broiler Mail** | ✅ | ✅ | — | — |
+|---|---|---|---|---|
+| Browser | Head | Head | Head | — |
+| Writer | Head | Head | Head | Head, served by BOSS |
+| Code | Head | Head | — | — |
+| Plate | Head | — | — | — |
+| Mail | Head | Placeholder; no interactive window | Head | — |
 
-The desktop applications run directly on Windows and Linux; Browser and Writer also have Android heads.
+A head's presence is implementation evidence, not platform acceptance. Android physical-device and accessibility validation remains component-specific. Broiler.Fond is an additional application under development, with a finance kernel and synthetic protocol fixtures; it is not a supported banking client.
 
-The **Broiler Office Standalone Server (BOSS)** hosts the WebAssembly version of Broiler Writer using ASP.NET Core and Kestrel. This allows the Writer to run in a browser without depending on a third-party hosted office platform or an external application server.
+## Browser deployment and self-hosting
 
-The long-term goal is not one application tied to one operating system, but reusable infrastructure that can move between desktop, mobile, browser, and self-hosted environments.
-
----
-
-## Self-Hosting and Control
-
-Broiler does not assume that every application must depend on an external cloud service. BOSS demonstrates a different model:
-
-```text
-Your Machine / Your Server
-          │
-          ▼
-        BOSS
-          │
-          ▼
- Broiler Writer (WebAssembly)
-          │
-          ▼
-      Web Browser
+```mermaid
+flowchart LR
+    Server[Your server: ASP.NET Core / Kestrel / BOSS] --> Assets[Writer WebAssembly assets]
+    Assets --> Browser[User browser]
 ```
 
-This enables local or privately hosted deployments while still using a browser-based application model.
+BOSS hosts Writer's browser assets. Browser WebAssembly deployment and a WebAssembly guest executed by Broiler.VM are distinct mechanisms. See [Native Compilation](native-compilation.md).
 
-Self-hosting is not required — but it should remain possible.
+Open source components, explicit composition and self-hosting keep the infrastructure inspectable and replaceable. Public APIs and behavior remain preview surfaces. Component human-review records and support ledgers determine release acceptance.
 
----
-
-## Open Infrastructure
-
-Broiler is built around open source, open standards, and replaceable components. The project deliberately avoids making Chromium, an embedded WebView, or another browser engine a mandatory dependency.
-
-That is not a rejection of those technologies. It is an exploration of what becomes possible when the browser and document stack itself remains open, inspectable, and under direct control.
-
-This matters for:
-
-- Auditability
-- Security review
-- Long-term maintainability
-- Self-hosting
-- Interoperability
-- Platform independence
-- Avoiding unnecessary dependency on a single browser engine or vendor stack
-
-For organizations that care about digital autonomy, local deployment, or long-lived software infrastructure, these properties can be as important as individual features.
-
----
-
-**See also:** [Component Map](https://github.com/Broiler-Platform/.github/blob/main/profile/docs/component-map.md) · [Native Compilation](https://github.com/Broiler-Platform/.github/blob/main/profile/docs/native-compilation.md) · [Engineering Principles](https://github.com/Broiler-Platform/.github/blob/main/profile/docs/principles.md) · [Status and Roadmap](https://github.com/Broiler-Platform/.github/blob/main/profile/docs/status.md)
+See [Component Map](component-map.md), [Status and Roadmap](status.md), and [Engineering Principles](principles.md).

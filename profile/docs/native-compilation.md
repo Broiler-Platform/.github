@@ -2,94 +2,42 @@
 
 [← Back to Broiler Platform](https://github.com/Broiler-Platform)
 
-Broiler is written entirely in managed .NET. That invites a fair question: does a managed browser and office stack pay a permanent performance and deployment tax against native code?
+Updated against the aggregate checkout on **21 October 2026**.
 
-The project's answer is **NativeAOT** — publishing ahead-of-time compiled, self-contained native binaries. A NativeAOT build has no .NET runtime dependency, no JIT warm-up, and no framework installation step. The user runs a single executable.
+NativeAOT publishes managed .NET applications as native executables without requiring an installed .NET runtime. Deployment can still include operating-system libraries, content and other files; a publish setting alone does not prove a single-file distribution, artifact size, warning count or release acceptance.
 
-The goal is to close the gap between "implemented in managed .NET" and "ships and performs like a native application" — without giving up any of the properties that made managed .NET the choice in the first place.
+## Current publish paths
 
----
+| Target | Repository evidence |
+|---|---|
+| Writer Windows x64 / Linux x64 | NativeAOT publish and CI paths; framework-dependent variants also exist |
+| Plate Windows x64 | NativeAOT publish path |
+| Mail Windows x64 / ARM64 | NativeAOT self-contained and framework-dependent validation packages; unsigned builds and draft releases |
+| Android application heads | Separate Android workload and publish path; not the desktop NativeAOT path |
+| Writer WebAssembly | Browser deployment through BOSS; distinct from desktop NativeAOT |
+| Broiler.VM | NativeAOT host/composition work exists; milestones and support remain unaccepted |
 
-## AOT is an architectural constraint, not a publish flag
+These are source declarations and component documentation, not results from a fresh publish in this update. See the component workflows for configurations and prerequisites: [Writer](https://github.com/Broiler-Platform/Broiler.Writer/tree/main/.github/workflows), [Plate](https://github.com/Broiler-Platform/Broiler.Plate/tree/main/.github/workflows), [Mail](https://github.com/Broiler-Platform/Broiler.Mail/tree/main/.github/workflows).
 
-This is the part that matters most, and the reason NativeAOT shows up in the platform's design rather than only in its build scripts.
+## Composition constraints
 
-NativeAOT compiles the whole program ahead of time. There is no runtime code generation and no runtime type discovery. Anything that resolves behavior by name at runtime — reflection over types the compiler cannot see, `Activator.CreateInstance`, reflection-based serialization, plug-in discovery by scanning assemblies — either fails to work or silently defeats trimming.
+NativeAOT requires code and metadata needed at runtime to remain available after trimming. Unbounded reflection, runtime code generation and assembly scanning can violate that contract. Use direct typed registration and source-generated serialization where appropriate; reflection supported by explicit metadata is not categorically forbidden. Validate the actual publish closure with trim and AOT analyzers, rather than relying on an ordinary build.
 
-Two consequences run through the codebase:
+JSEAL keeps contracts separate from the engine-specific providers. A composition root selects a provider explicitly. The presence of an engine provider in a component repository does not make that component's contracts assembly engine-dependent.
 
-- **A component that is AOT-compatible stays that way only if it is kept that way.** Reflection introduced into an AOT-published component will break the publish while leaving an ordinary build perfectly green. This is why CI publishes with AOT rather than only building.
-- **Composition must be explicit.** Back ends and language profiles are *registered* through direct, typed references — never discovered by assembly or type name. Static, source-generated catalogs replace plug-in scanning. There is no binary plug-in ABI.
+## Broiler.VM implementation and acceptance
 
-The second point is what connects NativeAOT to the platform architecture: the same rule that makes an AOT publish possible also makes the dependency graph inspectable, which is a property the project wants for its own sake.
+[Broiler.VM](https://github.com/Broiler-Platform/Broiler.VM) owns a profile-neutral core and profile project families within the same component. The core owns bounded loading, verification, lifecycle, resource authority and diagnostics; JavaScript and WebAssembly profiles own language execution. Profiles are compiled in and registered explicitly, without assembly scanning or a binary plug-in ABI.
 
----
+The checkout contains bytecode execution, a WebAssembly decoder/validator/interpreter and native artifact execution work. JavaScript defaults to bytecode. General native output may call interpreter handlers; restricted numeric programs have a direct machine-code path subject to admission rules. Executable backends are x86-64 with Windows or System V conventions; ARM64 is emitting-only.
 
-## Where it stands
+All VM-0 through VM-7 milestones remain **in progress and unaccepted**. The [status ledger](https://github.com/Broiler-Platform/Broiler.VM/blob/main/docs/roadmap.status.md) and [JavaScript execution-mode record](https://github.com/Broiler-Platform/Broiler.VM/blob/main/src/Broiler.VM.Profile.JavaScript/docs/roadmap.backends.md) define the evidence and limits. Compiling a VM host with NativeAOT does not itself compile guest JavaScript into machine code.
 
-| Target | Native compilation | Status |
-|---|---|---|
-| **Writer — Windows desktop** (`win-x64`) | NativeAOT | ✅ Shipping |
-| **Writer — Linux desktop** (`linux-x64`) | NativeAOT | ✅ Shipping |
-| **Plate — Windows desktop** (`win-x64`) | NativeAOT | ✅ Shipping |
-| **JavaScript and WebAssembly execution** | Broiler.VM language profiles, NativeAOT-compatible by design | 📋 Planned — not started |
-| **Android heads** | — | ❌ Excluded — experimental upstream |
-| **WebAssembly as a deployment target** | Not NativeAOT (see below) | ❌ Not applicable |
+The declared graph now includes a VM → Broiler.JS reference. Browser VM configurations select an optional provider while HtmlBridge DOM bindings still reach Broiler.JS; the current implementation is not an engine-independent replacement of that entire closure.
 
----
+## Two uses of WebAssembly
 
-## Shipping today
+- **Deployment target:** Writer runs inside a user browser, with assets served by BOSS.
+- **Guest format:** Broiler.VM's WebAssembly profile loads and interprets wasm input. It exists in source but has no accepted support claim.
 
-The two desktop heads of Broiler Writer publish with NativeAOT, and so does the Windows head of Broiler Plate. Each artifact is **a single self-contained native binary that runs with no .NET runtime installed** — 9.2 MB for the Writer's Windows head, against a 162-file framework-dependent drop.
-
-It publishes cleanly rather than by suppression: an AOT publish of the Windows head reports **zero `IL2xxx`/`IL3xxx` warnings**, and the Linux head reports zero under the trim, AOT, and single-file analyzers.
-
-That is possible because nothing in the Writer's dependency closure needs reflection the compiler cannot see through. The notable case is the Windows graphics backend: it dispatches COM through manual vtable offsets and `delegate* unmanaged` function pointers rather than `ComImport` interfaces — which is the one pattern that would otherwise rule out an AOT publish of the Direct2D path.
-
-A framework-dependent build remains available for anyone who wants one.
-
----
-
-## Broiler.VM — planned
-
-[`Broiler.VM`](https://github.com/Broiler-Platform/Broiler.VM) is a planned NativeAOT-compatible component that executes verified bytecode artifacts.
-
-> [!IMPORTANT]
-> Broiler.VM is **a component plan, not an implementation**. Its milestones are recorded as not started, and no capability should be inferred from planning text. The repository's own status ledger is the authority.
-
-The design idea is that Broiler.VM is a **host for language profiles, rather than a language itself**. The core owns profile selection, bounded artifact loading, the verified-artifact boundary, the execution lifecycle, resource limits, cancellation, and diagnostics. It deliberately owns no opcode set, no value representation, and no language semantics — those belong to the profiles.
-
-Two profiles are intended first: **JavaScript** and **WebAssembly**. Profiles reference the core; the core never references a profile, and a profile is added by compiling it in and registering its descriptor directly. No assembly scanning, no loading types by name, no runtime extension directory, no binary plug-in ABI — all of which follow from the NativeAOT contract described above.
-
-This is also the answer to an obvious objection. A JavaScript engine normally reaches for a JIT, and a NativeAOT program cannot generate code at runtime. A verified bytecode interpreter with language profiles is the route that keeps dynamic-language execution inside the AOT contract.
-
-**The JavaScript profile is the whole of the JavaScript-under-AOT plan.** There is no parallel effort to make the existing [`Broiler.JS`](https://github.com/Broiler-Platform/Broiler.JS) engine natively compiled. Earlier exploratory work there established what ahead-of-time compilation would demand of a JavaScript implementation — explicit registration instead of name-based probing, and an invariant-globalization surface — and those conclusions were carried into the Broiler.VM design rather than pursued separately. Broiler.JS is a legacy component in this respect: the VM's JavaScript profile is expected to begin from a snapshot copy of it, with no dependency edge in either direction.
-
----
-
-## What "WebAssembly" means here
-
-The word appears in two unrelated places in Broiler, which is worth untangling:
-
-- **WebAssembly as a deployment target** — Broiler Writer compiled to run in a browser and served by [BOSS](https://github.com/Broiler-Platform/.github/blob/main/profile/docs/architecture.md). This is **not** NativeAOT. NativeAOT emits a native binary for a desktop operating system and does not apply to a browser target at all; the WebAssembly analogue is a separate mono feature.
-- **WebAssembly as a guest bytecode** — a planned Broiler.VM *profile*, where the VM executes wasm bytecode as input, in the same way it would execute JavaScript bytecode.
-
-The first is how Broiler ships to browsers. The second is a planned execution capability. They are different mechanisms that happen to share a name.
-
-Android is excluded separately: the Android SDK reports NativeAOT on Android as an experimental feature not yet suitable for production, and it conflicts with that head's untrimmed build, since native compilation implies trimming.
-
----
-
-## For contributors
-
-If you work on a component that publishes with NativeAOT, or one that is being moved toward it, the practical rules are:
-
-- Do not introduce reflection, `Activator.CreateInstance`, or reflection-based serialization into an AOT-published closure. An ordinary build will not tell you that you broke it.
-- Register components explicitly through typed references. Do not resolve them by assembly or type name.
-- Treat trim and AOT analyzer warnings as failures rather than noise.
-
-See [Contributing](https://github.com/Broiler-Platform/.github/blob/main/CONTRIBUTING.md) for the general contribution process.
-
----
-
-**See also:** [Architecture and Deployment](https://github.com/Broiler-Platform/.github/blob/main/profile/docs/architecture.md) · [Engineering Principles](https://github.com/Broiler-Platform/.github/blob/main/profile/docs/principles.md) · [Status and Roadmap](https://github.com/Broiler-Platform/.github/blob/main/profile/docs/status.md)
+See [Architecture](architecture.md), [Component Map](component-map.md), and [Contributing](https://github.com/Broiler-Platform/.github/blob/main/CONTRIBUTING.md).

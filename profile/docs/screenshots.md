@@ -2,7 +2,7 @@
 
 [← Back to Broiler Platform](https://github.com/Broiler-Platform)
 
-These screenshots show the current state of Broiler during active development. Rendering is done entirely by the managed .NET engine — no Chromium, no embedded WebView, no native browser engine.
+These retained screenshots illustrate Broiler during development. Capture revisions and dates are not recorded here, so they are not current conformance evidence. Rendering is done entirely by the managed .NET engine — no Chromium, no embedded WebView, no native browser engine.
 
 ---
 
@@ -73,7 +73,7 @@ These screenshots show the current state of Broiler during active development. R
   </tr>
 </table>
 
-Measured compatibility figures for Test262, the Web Platform Tests, and WPT reftests are in [Status and Roadmap](https://github.com/Broiler-Platform/.github/blob/main/profile/docs/status.md).
+The evidence requirements and status for Test262, the Web Platform Tests, and WPT reftests are in [Status and Roadmap](https://github.com/Broiler-Platform/.github/blob/main/profile/docs/status.md).
 
 ---
 
