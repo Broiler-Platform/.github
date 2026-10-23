@@ -1,6 +1,6 @@
 {
-  "date": "2026-10-21",
-  "aggregate_commit": "4b71911134617a7cfb7bc93106c17a0fd1b0d54d",
+  "date": "2026-10-23",
+  "aggregate_commit": "3e605565512e9a4fd9f4b0b91d279639fc1a4c1f",
   "scope": "Component-owned tracked product csproj files; all declared conditions included; no MSBuild evaluation; excludes tests, samples, demos, benchmarks, eng, tools and docs.",
   "components": [
     {
@@ -31,6 +31,19 @@
       "level": 1,
       "dependencies": [
         "Broiler.DOM"
+      ]
+    },
+    {
+      "name": "Broiler.Cells",
+      "commit": "94feebcbb41b83e9f93a9336546b9ed0a25a4239",
+      "tracked_changes": "",
+      "projects": 3,
+      "level": 6,
+      "dependencies": [
+        "Broiler.Documents",
+        "Broiler.Graphics",
+        "Broiler.Hosting",
+        "Broiler.UI"
       ]
     },
     {
@@ -580,6 +593,118 @@
       "project": "Broiler.CSS.Dom/Broiler.CSS.Dom.csproj",
       "kind": "PackageReference",
       "reference": "Broiler.Dom",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Cells",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Cells.Controls/Broiler.Cells.Controls.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.Edit.Standard",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Cells",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Cells.Controls/Broiler.Cells.Controls.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.ScrollView.Standard",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Cells",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Cells.Controls/Broiler.Cells.Controls.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.Standard",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Cells",
+      "target": "Broiler.Documents",
+      "project": "src/Broiler.Cells.Core/Broiler.Cells.Core.csproj",
+      "kind": "ProjectReference",
+      "reference": "..\\..\\..\\Broiler.Documents\\src\\Broiler.Documents.Csv\\Broiler.Documents.Csv.csproj",
+      "condition": "Exists('..\\..\\..\\Broiler.Documents\\src\\Broiler.Documents.Csv\\Broiler.Documents.Csv.csproj')"
+    },
+    {
+      "source": "Broiler.Cells",
+      "target": "Broiler.Documents",
+      "project": "src/Broiler.Cells.Core/Broiler.Cells.Core.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Documents.Csv",
+      "condition": "!Exists('..\\..\\..\\Broiler.Documents\\src\\Broiler.Documents.Csv\\Broiler.Documents.Csv.csproj')"
+    },
+    {
+      "source": "Broiler.Cells",
+      "target": "Broiler.Graphics",
+      "project": "src/Broiler.Cells.Windows/Broiler.Cells.Windows.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Graphics.Windows",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Cells",
+      "target": "Broiler.Hosting",
+      "project": "src/Broiler.Cells.Windows/Broiler.Cells.Windows.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.Hosting.Windows",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Cells",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Cells.Windows/Broiler.Cells.Windows.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.AboutDialog.Standard",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Cells",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Cells.Windows/Broiler.Cells.Windows.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.Button.Standard",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Cells",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Cells.Windows/Broiler.Cells.Windows.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.Dialog.Standard",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Cells",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Cells.Windows/Broiler.Cells.Windows.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.FileDialog.Standard",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Cells",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Cells.Windows/Broiler.Cells.Windows.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.Label.Standard",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Cells",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Cells.Windows/Broiler.Cells.Windows.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.Menu.Standard",
+      "condition": ""
+    },
+    {
+      "source": "Broiler.Cells",
+      "target": "Broiler.UI",
+      "project": "src/Broiler.Cells.Windows/Broiler.Cells.Windows.csproj",
+      "kind": "PackageReference",
+      "reference": "Broiler.UI.Window.Standard",
       "condition": ""
     },
     {

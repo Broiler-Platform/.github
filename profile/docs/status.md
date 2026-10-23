@@ -2,14 +2,14 @@
 
 [← Back to Broiler Platform](https://github.com/Broiler-Platform)
 
-Broiler is under active development and is **not yet intended for production use**. This summary was reconciled with the aggregate checkout on **21 October 2026**; implementation, test evidence and release acceptance are separate claims.
+Broiler is under active development and is **not yet intended for production use**. This summary was reconciled with the aggregate checkout on **23 October 2026**; implementation, test evidence and release acceptance are separate claims.
 
 ## Platform snapshot
 
 | Area | Current repository evidence |
 |---|---|
-| Repository composition | 26 component submodules; 70 declared cross-component product dependency edges |
-| Applications | Browser, Writer, Code, Plate and Mail; Fond under development |
+| Repository composition | 27 component submodules; 74 declared cross-component product dependency edges |
+| Applications | Browser, Writer, Code, Plate, Mail and Cells; Fond under development |
 | Application targets | Windows, Linux, Android; Writer also has a WebAssembly head |
 | Mail targets | Windows and Android; Linux remains a placeholder |
 | Self-hosting | BOSS serves the WebAssembly Writer through ASP.NET Core |
@@ -27,6 +27,7 @@ The aggregate [roadmap](https://github.com/Broiler-Platform/Broiler/blob/main/do
 
 - Shared DOM, CSS, layout, HTML rendering, JavaScript, graphics, input, media, document and UI components exist, with component-owned validation suites.
 - Code includes workspace and C# language-service projects and content-based per-file human-review tooling.
+- Cells, the newest application, is a Windows-only minimal spreadsheet: a 100 × 100 grid with A1-style addresses, in-place editing, row/column selection and resizing, and RFC 4180 CSV open/save through `Broiler.Documents.Csv`. Its three-version roadmap is complete; it has no release and no human-review record.
 - Mail has single-account reading, SMTP composition and HTML preview work. Provider acceptance and renderer process isolation remain release gates; generated packages are unsigned validation builds.
 - Documents provides explicit codec composition. PDF is a subset implementation with optional font and image providers; package generation does not certify PDF conformance or enable every application feature.
 - Printing work includes pagination and PDF spool primitives; the aggregate printing roadmap retains platform and application delivery gates.

@@ -2,7 +2,7 @@
 
 [← Back to Broiler Platform](https://github.com/Broiler-Platform)
 
-Updated against the aggregate checkout on **21 October 2026**.
+Updated against the aggregate checkout on **23 October 2026**.
 
 NativeAOT publishes managed .NET applications as native executables without requiring an installed .NET runtime. Deployment can still include operating-system libraries, content and other files; a publish setting alone does not prove a single-file distribution, artifact size, warning count or release acceptance.
 

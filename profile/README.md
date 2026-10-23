@@ -27,21 +27,21 @@ Broiler is **not** a wrapper around an existing browser or office stack. It is a
 |-----------|--------|
 | Standards verification | Test262, WPT and reftest tooling; current figures require revision-linked evidence ([status](https://github.com/Broiler-Platform/.github/blob/main/profile/docs/status.md)) |
 | Supported Platforms | Windows, Linux, Android, WebAssembly |
-| Applications | Browser, Writer, Code, Plate, Mail |
+| Applications | Browser, Writer, Code, Plate, Mail, Cells |
 | Reference Deployment | BOSS |
 | Document Formats | RTF, HTML, Markdown, DOCX, ODT, CSV, PDF *(preview subset)* |
 | Native Compilation | Writer *(win-x64, linux-x64)* and Plate *(win-x64)* publish paths; Mail *(win-x64, win-arm64)* validation packaging uses **NativeAOT** |
-| Repository Layout | 26 component submodules — 5 primary applications, shared libraries and projects under development ([Component Map](https://github.com/Broiler-Platform/.github/blob/main/profile/docs/component-map.md)) |
+| Repository Layout | 27 component submodules — 6 applications, shared libraries and projects under development ([Component Map](https://github.com/Broiler-Platform/.github/blob/main/profile/docs/component-map.md)) |
 
 ---
 
 ## Architecture at a Glance
 
-The aggregate checkout pins component repositories as Git submodules and owns integration tooling, tests and BOSS. Components consume one another through NuGet packages, with project references within each repository. The generated map contains **26 components and 70 declared dependency edges**, including optional and conditional paths, as of **21 October 2026**.
+The aggregate checkout pins component repositories as Git submodules and owns integration tooling, tests and BOSS. Components consume one another through NuGet packages, with project references within each repository. The generated map contains **27 components and 74 declared dependency edges**, including optional and conditional paths, as of **23 October 2026**.
 
 ```mermaid
 flowchart TD
-    Apps[Browser / Writer / Code / Plate / Mail] --> Hosting[Hosting and UI]
+    Apps[Browser / Writer / Code / Plate / Mail / Cells] --> Hosting[Hosting and UI]
     Apps --> Web[HtmlBridge / HTML / CSS / DOM / Layout]
     Hosting --> Documents[Documents and pagination]
     Web --> Engines[JSEAL providers: Broiler.JS and Broiler.VM]
@@ -65,6 +65,7 @@ The full wiring — who depends on whom, in both directions — is in the
 | **Broiler Code** | Code editor with C# language services and a human-review workspace | Windows, Linux |
 | **Broiler Plate** | Read-only viewer — the smallest honest demonstration of what the platform can already read | Windows |
 | **Broiler Mail** | Mail client — Single-account reader with SMTP composition and HTML preview work; provider acceptance and renderer isolation remain open | Windows, Android; Linux placeholder |
+| **Broiler Cells** | Minimal spreadsheet — 100 × 100 grid with A1-style addresses, in-place editing, row/column selection and resizing, CSV open/save | Windows |
 | **BOSS** | Broiler Office Standalone Server — hosts the WebAssembly Writer via ASP.NET Core | self-hosted |
 
 ---
@@ -115,6 +116,7 @@ Each application releases on its own schedule, from its own repository:
 | **Broiler Writer** | [Releases](https://github.com/Broiler-Platform/Broiler.Writer/releases) | `win-x64` and `linux-x64`, self-contained *(NativeAOT)* or framework-dependent · Android `.apk` / `.aab` |
 | **Broiler Plate** | [Releases](https://github.com/Broiler-Platform/Broiler.Plate/releases) | `win-x64` *(NativeAOT)* |
 | **Broiler Code** | build from [source](https://github.com/Broiler-Platform/Broiler.Code) | no release yet |
+| **Broiler Cells** | build from [source](https://github.com/Broiler-Platform/Broiler.Cells) | no release yet |
 | **Broiler Mail** | [Source and workflows](https://github.com/Broiler-Platform/Broiler.Mail) | Windows x64/ARM64 and Android validation packaging; unsigned builds and draft releases |
 
 Then:
